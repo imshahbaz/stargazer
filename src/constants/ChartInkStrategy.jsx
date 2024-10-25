@@ -1,4 +1,4 @@
-export const chartink_strategy2 = [
+export const chartink_strategy = [
   {
     name: 'RSE',
     link: 'https://chartink.com/screener/crossing-5011',

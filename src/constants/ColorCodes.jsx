@@ -2,7 +2,7 @@ export const ColorCodes = {
   main: '#121212',
   element: '#c2c2c0',
   border: '#c2c2c0',
-  text: 'white',
+  text: '#abbbc8',
 };
 
 export const FontSize = {
