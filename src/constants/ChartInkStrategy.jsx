@@ -59,4 +59,9 @@ export const chartink_strategy = [
     link: 'https://chartink.com/screener/dual-rsi-85',
     display: true,
   },
+  {
+    name: 'Super Rsi',
+    link: 'https://chartink.com/screener/super-rsi-251',
+    display: true,
+  },
 ];
