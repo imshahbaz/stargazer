@@ -12,7 +12,7 @@ export const chartink_strategy = [
   {
     name: 'Hammer',
     link: 'https://chartink.com/screener/hammer-16123355',
-    display: true,
+    display: false,
   },
   {
     name: '3:30 Formula',
@@ -42,7 +42,7 @@ export const chartink_strategy = [
   {
     name: 'Super Bollinger',
     link: 'https://chartink.com/screener/superbollinger-2',
-    display: true,
+    display: false,
   },
   {
     name: '3:30 Intraday',
