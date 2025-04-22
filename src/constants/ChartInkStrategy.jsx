@@ -18,5 +18,9 @@ export const chartink_strategy = [
     name: 'Super Rsi',
     link: 'https://chartink.com/screener/super-rsi-251',
     display: true,
+  },  {
+    name: '521',
+    link: 'https://chartink.com/screener/521-2067',
+    display: true,
   },
 ];
