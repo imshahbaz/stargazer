@@ -1,7 +1,17 @@
 export const mtf = [
   {
+    name: '360 ONE WAM LIMITED',
+    symbol: '360ONE',
+    percent: 60,
+  },
+  {
     name: '3M INDIA LIMITED',
     symbol: '3MINDIA',
+    percent: 60,
+  },
+  {
+    name: 'AARTI DRUGS LTD.',
+    symbol: 'AARTIDRUGS',
     percent: 60,
   },
   {
@@ -10,9 +20,14 @@ export const mtf = [
     percent: 65,
   },
   {
+    name: 'AARTI PHARMALABS LIMITED',
+    symbol: 'AARTIPHARM',
+    percent: 60,
+  },
+  {
     name: 'AAVAS FINANCIERS LIMITED',
     symbol: 'AAVAS',
-    percent: 60,
+    percent: 65,
   },
   {
     name: 'ABB INDIA LIMITED',
@@ -30,8 +45,23 @@ export const mtf = [
     percent: 65,
   },
   {
+    name: 'ADITYA BIRLA FASHION & RT',
+    symbol: 'ABFRL',
+    percent: 65,
+  },
+  {
+    name: 'ADITYA BIRLA REAL EST LTD',
+    symbol: 'ABREL',
+    percent: 60,
+  },
+  {
     name: 'ADIT BIRL SUN LIF AMC LTD',
     symbol: 'ABSLAMC',
+    percent: 65,
+  },
+  {
+    name: 'ACC LIMITED',
+    symbol: 'ACC',
     percent: 60,
   },
   {
@@ -40,19 +70,34 @@ export const mtf = [
     percent: 65,
   },
   {
-    name: 'AFFLE (INDIA) LIMITED',
-    symbol: 'AFFLE',
+    name: 'ACUTAAS CHEMICALS LIMITED',
+    symbol: 'ACUTAAS',
     percent: 60,
+  },
+  {
+    name: 'AETHER INDUSTRIES LIMITED',
+    symbol: 'AETHER',
+    percent: 60,
+  },
+  {
+    name: 'AFFLE 3I LIMITED',
+    symbol: 'AFFLE',
+    percent: 65,
   },
   {
     name: 'AIA ENGINEERING LIMITED',
     symbol: 'AIAENG',
-    percent: 65,
+    percent: 70,
   },
   {
     name: 'AJANTA PHARMA LIMITED',
     symbol: 'AJANTPHARM',
     percent: 65,
+  },
+  {
+    name: 'ALIVUS LIFE SCIENCES LTD',
+    symbol: 'ALIVUS',
+    percent: 60,
   },
   {
     name: 'ALKEM LABORATORIES LTD.',
@@ -65,9 +110,19 @@ export const mtf = [
     percent: 60,
   },
   {
-    name: 'AMBER ENTERPRISES (I) LTD',
-    symbol: 'AMBER',
+    name: 'ALLCARGO LOGISTICS LTD',
+    symbol: 'ALLCARGO',
     percent: 60,
+  },
+  {
+    name: 'MIRAEAMC - ALPHAETF',
+    symbol: 'ALPHAETF',
+    percent: 70,
+  },
+  {
+    name: 'ICICIPRAMC - ICICIALPLV',
+    symbol: 'ALPL30IETF',
+    percent: 70,
   },
   {
     name: 'AMRUTAJAN HEALTH LTD',
@@ -75,19 +130,19 @@ export const mtf = [
     percent: 60,
   },
   {
-    name: 'ANUPAM RASAYAN INDIA LTD',
-    symbol: 'ANURAS',
-    percent: 60,
+    name: 'ANAND RATHI WEALTH LTD',
+    symbol: 'ANANDRATHI',
+    percent: 65,
   },
   {
-    name: 'APAR INDUSTRIES LTD.',
-    symbol: 'APARINDS',
-    percent: 60,
+    name: 'ANUPAM RASAYAN INDIA LTD',
+    symbol: 'ANURAS',
+    percent: 65,
   },
   {
     name: 'APL APOLLO TUBES LTD',
     symbol: 'APLAPOLLO',
-    percent: 60,
+    percent: 65,
   },
   {
     name: 'ALEMBIC PHARMA LTD',
@@ -112,6 +167,11 @@ export const mtf = [
   {
     name: 'APTUS VALUE HSG FIN I LTD',
     symbol: 'APTUS',
+    percent: 65,
+  },
+  {
+    name: 'AMARA RAJA ENERGY MOB LTD',
+    symbol: 'ARE&M',
     percent: 60,
   },
   {
@@ -140,11 +200,6 @@ export const mtf = [
     percent: 70,
   },
   {
-    name: 'ASTEC LIFESCIENCES LTD',
-    symbol: 'ASTEC',
-    percent: 60,
-  },
-  {
     name: 'ASTER DM HEALTHCARE LTD.',
     symbol: 'ASTERDM',
     percent: 60,
@@ -155,14 +210,19 @@ export const mtf = [
     percent: 70,
   },
   {
+    name: 'ASTRAZENECA PHARMA IND LT',
+    symbol: 'ASTRAZEN',
+    percent: 60,
+  },
+  {
     name: 'ATUL LTD',
     symbol: 'ATUL',
-    percent: 70,
+    percent: 65,
   },
   {
     name: 'AU SMALL FINANCE BANK LTD',
     symbol: 'AUBANK',
-    percent: 70,
+    percent: 65,
   },
   {
     name: 'AUROBINDO PHARMA LTD',
@@ -175,8 +235,18 @@ export const mtf = [
     percent: 60,
   },
   {
+    name: 'AVANTEL LIMITED',
+    symbol: 'AVANTEL',
+    percent: 60,
+  },
+  {
     name: 'AVANTI FEEDS LIMITED',
     symbol: 'AVANTIFEED',
+    percent: 60,
+  },
+  {
+    name: 'AWFIS SPACE SOLUTIONS LTD',
+    symbol: 'AWFIS',
     percent: 60,
   },
   {
@@ -185,9 +255,19 @@ export const mtf = [
     percent: 70,
   },
   {
+    name: 'AZAD ENGINEERING LIMITED',
+    symbol: 'AZAD',
+    percent: 60,
+  },
+  {
     name: 'BAJAJ AUTO LIMITED',
     symbol: 'BAJAJ-AUTO',
     percent: 70,
+  },
+  {
+    name: 'BAJAJ CONSUMER CARE LTD',
+    symbol: 'BAJAJCON',
+    percent: 60,
   },
   {
     name: 'BAJAJ ELECT.LTD',
@@ -200,19 +280,19 @@ export const mtf = [
     percent: 70,
   },
   {
+    name: 'BAJAJ HOUSING FINANCE LTD',
+    symbol: 'BAJAJHFL',
+    percent: 65,
+  },
+  {
     name: 'BAJAJ HOLDINGS & INVS LTD',
     symbol: 'BAJAJHLDNG',
-    percent: 60,
+    percent: 65,
   },
   {
     name: 'BAJAJ FINANCE LIMITED',
     symbol: 'BAJFINANCE',
     percent: 70,
-  },
-  {
-    name: 'BALAJI AMINES LIMITED',
-    symbol: 'BALAMINES',
-    percent: 60,
   },
   {
     name: 'BALKRISHNA IND. LTD',
@@ -225,6 +305,11 @@ export const mtf = [
     percent: 65,
   },
   {
+    name: 'BANDHAN BANK LIMITED',
+    symbol: 'BANDHANBNK',
+    percent: 60,
+  },
+  {
     name: 'BANK OF BARODA',
     symbol: 'BANKBARODA',
     percent: 65,
@@ -232,6 +317,11 @@ export const mtf = [
   {
     name: 'NIP IND ETF BANK BEES',
     symbol: 'BANKBEES',
+    percent: 70,
+  },
+  {
+    name: 'ICICIPRAMC - IPRU5008',
+    symbol: 'BANKIETF',
     percent: 70,
   },
   {
@@ -275,6 +365,11 @@ export const mtf = [
     percent: 70,
   },
   {
+    name: 'MIRAEAMC - MAFSETF',
+    symbol: 'BFSI',
+    percent: 70,
+  },
+  {
     name: 'BHARAT FORGE LTD',
     symbol: 'BHARATFORG',
     percent: 65,
@@ -285,19 +380,24 @@ export const mtf = [
     percent: 70,
   },
   {
+    name: 'BHARTI HEXACOM LIMITED',
+    symbol: 'BHARTIHEXA',
+    percent: 65,
+  },
+  {
     name: 'BHEL',
     symbol: 'BHEL',
+    percent: 60,
+  },
+  {
+    name: 'BIKAJI FOODS INTERN LTD',
+    symbol: 'BIKAJI',
     percent: 60,
   },
   {
     name: 'BIOCON LIMITED.',
     symbol: 'BIOCON',
     percent: 65,
-  },
-  {
-    name: 'BIRLA CORPORATION LTD',
-    symbol: 'BIRLACORPN',
-    percent: 60,
   },
   {
     name: 'BLUE DART EXPRESS LTD',
@@ -330,14 +430,14 @@ export const mtf = [
     percent: 70,
   },
   {
+    name: 'ADITYBIRLA SL NIF ETF-GR',
+    symbol: 'BSLNIFTY',
+    percent: 75,
+  },
+  {
     name: 'BIRLASOFT LIMITED',
     symbol: 'BSOFT',
     percent: 65,
-  },
-  {
-    name: 'CAMLIN FINE SCIENCES LTD',
-    symbol: 'CAMLINFINE',
-    percent: 60,
   },
   {
     name: 'CAMPUS ACTIVEWEAR LIMITED',
@@ -360,8 +460,18 @@ export const mtf = [
     percent: 65,
   },
   {
+    name: 'CAPLIN POINT LAB LTD.',
+    symbol: 'CAPLIPOINT',
+    percent: 60,
+  },
+  {
     name: 'CARBORUNDUM UNIVERSAL LTD',
     symbol: 'CARBORUNIV',
+    percent: 65,
+  },
+  {
+    name: 'CARE RATINGS LIMITED',
+    symbol: 'CARERATING',
     percent: 60,
   },
   {
@@ -370,8 +480,13 @@ export const mtf = [
     percent: 60,
   },
   {
-    name: 'CCL PRODUCTS (I) LTD',
-    symbol: 'CCL',
+    name: 'CEAT LIMITED',
+    symbol: 'CEATLTD',
+    percent: 60,
+  },
+  {
+    name: 'CELLO WORLD LIMITED',
+    symbol: 'CELLO',
     percent: 60,
   },
   {
@@ -400,14 +515,29 @@ export const mtf = [
     percent: 60,
   },
   {
+    name: 'CHAMBAL FERTILIZERS LTD',
+    symbol: 'CHAMBLFERT',
+    percent: 60,
+  },
+  {
     name: 'CHOLAMANDALAM IN & FIN CO',
     symbol: 'CHOLAFIN',
     percent: 65,
   },
   {
+    name: 'CHOLAMANDALAM FIN HOL LTD',
+    symbol: 'CHOLAHLDNG',
+    percent: 60,
+  },
+  {
     name: 'CIE AUTOMOTIVE INDIA LTD',
     symbol: 'CIEINDIA',
     percent: 60,
+  },
+  {
+    name: 'CIGNITI TECHNOLOGIES LTD',
+    symbol: 'CIGNITITEC',
+    percent: 65,
   },
   {
     name: 'CIPLA LTD',
@@ -417,7 +547,7 @@ export const mtf = [
   {
     name: 'CLEAN SCIENCE & TECH LTD',
     symbol: 'CLEAN',
-    percent: 70,
+    percent: 65,
   },
   {
     name: 'CMS INFO SYSTEMS LIMITED',
@@ -435,6 +565,11 @@ export const mtf = [
     percent: 65,
   },
   {
+    name: 'COHANCE LIFESCIENCES LTD',
+    symbol: 'COHANCE',
+    percent: 65,
+  },
+  {
     name: 'COLGATE PALMOLIVE LTD.',
     symbol: 'COLPAL',
     percent: 70,
@@ -447,7 +582,7 @@ export const mtf = [
   {
     name: 'COROMANDEL INTERNTL. LTD',
     symbol: 'COROMANDEL',
-    percent: 70,
+    percent: 65,
   },
   {
     name: 'CPSE ETF',
@@ -462,12 +597,17 @@ export const mtf = [
   {
     name: 'CRISIL LTD',
     symbol: 'CRISIL',
-    percent: 60,
+    percent: 65,
   },
   {
     name: 'CROMPT GREA CON ELEC LTD',
     symbol: 'CROMPTON',
-    percent: 70,
+    percent: 65,
+  },
+  {
+    name: 'CSB BANK LIMITED',
+    symbol: 'CSBBANK',
+    percent: 65,
   },
   {
     name: 'CITY UNION BANK LTD',
@@ -482,6 +622,11 @@ export const mtf = [
   {
     name: 'CYIENT LIMITED',
     symbol: 'CYIENT',
+    percent: 60,
+  },
+  {
+    name: 'CYIENT DLM LIMITED',
+    symbol: 'CYIENTDLM',
     percent: 65,
   },
   {
@@ -495,9 +640,14 @@ export const mtf = [
     percent: 70,
   },
   {
+    name: 'DATAMATICS GLOBAL SER LTD',
+    symbol: 'DATAMATICS',
+    percent: 60,
+  },
+  {
     name: 'DCB BANK LIMITED',
     symbol: 'DCBBANK',
-    percent: 60,
+    percent: 65,
   },
   {
     name: 'DCM SHRIRAM LIMITED',
@@ -517,7 +667,7 @@ export const mtf = [
   {
     name: 'DELHIVERY LIMITED',
     symbol: 'DELHIVERY',
-    percent: 60,
+    percent: 65,
   },
   {
     name: 'DELTA CORP LIMITED',
@@ -527,11 +677,16 @@ export const mtf = [
   {
     name: 'DEVYANI INTERNATIONAL LTD',
     symbol: 'DEVYANI',
-    percent: 60,
+    percent: 65,
   },
   {
     name: 'DHAMPUR SUGAR MILLS LTD.',
     symbol: 'DHAMPURSUG',
+    percent: 60,
+  },
+  {
+    name: 'PRATAAP SNACKS LIMITED',
+    symbol: 'DIAMONDYD',
     percent: 60,
   },
   {
@@ -550,6 +705,11 @@ export const mtf = [
     percent: 65,
   },
   {
+    name: 'DOMS INDUSTRIES LIMITED',
+    symbol: 'DOMS',
+    percent: 65,
+  },
+  {
     name: 'DR. REDDY S LABORATORIES',
     symbol: 'DRREDDY',
     percent: 70,
@@ -560,8 +720,8 @@ export const mtf = [
     percent: 60,
   },
   {
-    name: 'ECLERX SERVICES LTD',
-    symbol: 'ECLERX',
+    name: 'DYNAMATIC TECHNOLOGIES',
+    symbol: 'DYNAMATECH',
     percent: 60,
   },
   {
@@ -572,17 +732,52 @@ export const mtf = [
   {
     name: 'EID PARRY INDIA LTD',
     symbol: 'EIDPARRY',
+    percent: 65,
+  },
+  {
+    name: 'EIH LIMITED',
+    symbol: 'EIHOTEL',
+    percent: 60,
+  },
+  {
+    name: 'ELGI EQUIPMENTS LTD',
+    symbol: 'ELGIEQUIP',
+    percent: 60,
+  },
+  {
+    name: 'EMAMI LIMITED',
+    symbol: 'EMAMILTD',
+    percent: 60,
+  },
+  {
+    name: 'EMS LIMITED',
+    symbol: 'EMSLIMITED',
     percent: 60,
   },
   {
     name: 'ENDURANCE TECHNO. LTD.',
     symbol: 'ENDURANCE',
+    percent: 65,
+  },
+  {
+    name: 'ENTERO HEALTHCARE SOLU L',
+    symbol: 'ENTERO',
+    percent: 60,
+  },
+  {
+    name: 'EPL LIMITED',
+    symbol: 'EPL',
     percent: 60,
   },
   {
     name: 'EQUITAS SMALL FIN BNK LTD',
     symbol: 'EQUITASBNK',
-    percent: 60,
+    percent: 65,
+  },
+  {
+    name: 'ERIS LIFESCIENCES LIMITED',
+    symbol: 'ERIS',
+    percent: 65,
   },
   {
     name: 'ESCORTS KUBOTA LIMITED',
@@ -590,8 +785,33 @@ export const mtf = [
     percent: 65,
   },
   {
+    name: 'ETERNAL LIMITED',
+    symbol: 'ETERNAL',
+    percent: 60,
+  },
+  {
+    name: 'ETHOS LIMITED',
+    symbol: 'ETHOSLTD',
+    percent: 60,
+  },
+  {
+    name: 'EUREKA FORBES LIMITED',
+    symbol: 'EUREKAFORB',
+    percent: 60,
+  },
+  {
     name: 'EVEREADY INDS. IND. LTD.',
     symbol: 'EVEREADY',
+    percent: 60,
+  },
+  {
+    name: 'EXIDE INDUSTRIES LTD',
+    symbol: 'EXIDEIND',
+    percent: 65,
+  },
+  {
+    name: 'FINEOTEX CHEMICAL LIMITED',
+    symbol: 'FCL',
     percent: 60,
   },
   {
@@ -605,8 +825,23 @@ export const mtf = [
     percent: 70,
   },
   {
+    name: 'FINOLEX CABLES LTD',
+    symbol: 'FINCABLES',
+    percent: 60,
+  },
+  {
     name: 'FINE ORGANIC IND. LTD.',
     symbol: 'FINEORG',
+    percent: 60,
+  },
+  {
+    name: 'FINOLEX INDUSTRIES LTD',
+    symbol: 'FINPIPE',
+    percent: 60,
+  },
+  {
+    name: 'BRAINBEES SOLUTIONS LTD',
+    symbol: 'FIRSTCRY',
     percent: 60,
   },
   {
@@ -615,9 +850,19 @@ export const mtf = [
     percent: 60,
   },
   {
+    name: 'GUJARAT FLUOROCHEM LTD',
+    symbol: 'FLUOROCHEM',
+    percent: 60,
+  },
+  {
+    name: 'ICICIPRAMC - ICICIFMCG',
+    symbol: 'FMCGIETF',
+    percent: 70,
+  },
+  {
     name: 'FORTIS HEALTHCARE LTD',
     symbol: 'FORTIS',
-    percent: 60,
+    percent: 65,
   },
   {
     name: 'FIRSTSOURCE SOLU. LTD.',
@@ -625,14 +870,19 @@ export const mtf = [
     percent: 60,
   },
   {
-    name: 'GABRIEL INDIA LTD',
-    symbol: 'GABRIEL',
+    name: 'FUSION FINANCE LIMITED',
+    symbol: 'FUSION',
+    percent: 60,
+  },
+  {
+    name: 'GUJARAT AMBUJA EXPORTS LT',
+    symbol: 'GAEL',
     percent: 60,
   },
   {
     name: 'GAIL (INDIA) LTD',
     symbol: 'GAIL',
-    percent: 60,
+    percent: 65,
   },
   {
     name: 'GALAXY SURFACTANTS LTD',
@@ -652,12 +902,17 @@ export const mtf = [
   {
     name: 'GILLETTE INDIA LTD',
     symbol: 'GILLETTE',
-    percent: 70,
+    percent: 65,
+  },
+  {
+    name: 'GLAND PHARMA LIMITED',
+    symbol: 'GLAND',
+    percent: 60,
   },
   {
     name: 'GLAXOSMITHKLINE PHARMA LT',
     symbol: 'GLAXO',
-    percent: 65,
+    percent: 60,
   },
   {
     name: 'GLENMARK PHARMACEUTICALS',
@@ -665,14 +920,39 @@ export const mtf = [
     percent: 65,
   },
   {
+    name: 'GLOBUS SPIRITS LTD',
+    symbol: 'GLOBUSSPR',
+    percent: 60,
+  },
+  {
     name: 'GMM PFAUDLER LIMITED',
     symbol: 'GMMPFAUDLR',
     percent: 60,
   },
   {
+    name: 'GMR AIRPORTS LIMITED',
+    symbol: 'GMRAIRPORT',
+    percent: 65,
+  },
+  {
+    name: 'GUJ NAR VAL FER & CHEM L',
+    symbol: 'GNFC',
+    percent: 65,
+  },
+  {
+    name: 'GO FASHION INDIA LTD',
+    symbol: 'GOCOLORS',
+    percent: 65,
+  },
+  {
+    name: 'GO DIGIT GENERAL INS LTD',
+    symbol: 'GODIGIT',
+    percent: 65,
+  },
+  {
     name: 'GODREJ AGROVET LIMITED',
     symbol: 'GODREJAGRO',
-    percent: 60,
+    percent: 65,
   },
   {
     name: 'GODREJ CONSUMER PRODUCTS',
@@ -680,9 +960,19 @@ export const mtf = [
     percent: 70,
   },
   {
+    name: 'GODREJ INDUSTRIES LTD',
+    symbol: 'GODREJIND',
+    percent: 60,
+  },
+  {
     name: 'GODREJ PROPERTIES LTD',
     symbol: 'GODREJPROP',
     percent: 65,
+  },
+  {
+    name: 'GODAWARI POW & ISP LTD',
+    symbol: 'GPIL',
+    percent: 60,
   },
   {
     name: 'GUJARAT PIPAVAV PORT LTD',
@@ -715,6 +1005,11 @@ export const mtf = [
     percent: 60,
   },
   {
+    name: 'G R INFRAPROJECTS LIMITED',
+    symbol: 'GRINFRA',
+    percent: 60,
+  },
+  {
     name: 'GUJ STATE FERT & CHEM LTD',
     symbol: 'GSFC',
     percent: 60,
@@ -730,19 +1025,29 @@ export const mtf = [
     percent: 65,
   },
   {
+    name: 'GULF OIL LUB. IND. LTD.',
+    symbol: 'GULFOILLUB',
+    percent: 60,
+  },
+  {
     name: 'HINDUSTAN AERONAUTICS LTD',
     symbol: 'HAL',
-    percent: 60,
+    percent: 65,
   },
   {
     name: 'HAPPIEST MINDS TECHNO LTD',
     symbol: 'HAPPSTMNDS',
-    percent: 60,
+    percent: 65,
   },
   {
     name: 'HAVELLS INDIA LIMITED',
     symbol: 'HAVELLS',
     percent: 70,
+  },
+  {
+    name: 'HEALTHCARE GLOB. ENT. LTD',
+    symbol: 'HCG',
+    percent: 65,
   },
   {
     name: 'HCL TECHNOLOGIES LTD',
@@ -765,6 +1070,26 @@ export const mtf = [
     percent: 70,
   },
   {
+    name: 'HDFCAMC - HDFCNEXT50',
+    symbol: 'HDFCNEXT50',
+    percent: 70,
+  },
+  {
+    name: 'HDFCAMC - HDFCNIFBAN',
+    symbol: 'HDFCNIFBAN',
+    percent: 70,
+  },
+  {
+    name: 'HDFCAMC - HDFCNIFTY',
+    symbol: 'HDFCNIFTY',
+    percent: 75,
+  },
+  {
+    name: 'HDFCAMC - HDFCSML250',
+    symbol: 'HDFCSML250',
+    percent: 70,
+  },
+  {
     name: 'HEIDELBERGCEMENT (I) LTD',
     symbol: 'HEIDELBERG',
     percent: 60,
@@ -778,6 +1103,11 @@ export const mtf = [
     name: 'HERO MOTOCORP LIMITED',
     symbol: 'HEROMOTOCO',
     percent: 70,
+  },
+  {
+    name: 'H.G.INFRA ENGINEERING LTD',
+    symbol: 'HGINFRA',
+    percent: 60,
   },
   {
     name: 'HIKAL LIMITED',
@@ -797,6 +1127,31 @@ export const mtf = [
   {
     name: 'HINDUSTAN UNILEVER LTD.',
     symbol: 'HINDUNILVR',
+    percent: 70,
+  },
+  {
+    name: 'HOME FIRST FIN CO IND LTD',
+    symbol: 'HOMEFIRST',
+    percent: 60,
+  },
+  {
+    name: 'HONASA CONSUMER LIMITED',
+    symbol: 'HONASA',
+    percent: 60,
+  },
+  {
+    name: 'HONEYWELL AUTOMATION IND',
+    symbol: 'HONAUT',
+    percent: 70,
+  },
+  {
+    name: 'HIMADRI SPECIALITY CHEM L',
+    symbol: 'HSCL',
+    percent: 60,
+  },
+  {
+    name: 'HYUNDAI MOTOR INDIA LTD',
+    symbol: 'HYUNDAI',
     percent: 70,
   },
   {
@@ -825,11 +1180,6 @@ export const mtf = [
     percent: 65,
   },
   {
-    name: 'IDBI BANK LIMITED',
-    symbol: 'IDBI',
-    percent: 60,
-  },
-  {
     name: 'IDFC FIRST BANK LIMITED',
     symbol: 'IDFCFIRSTB',
     percent: 65,
@@ -840,9 +1190,34 @@ export const mtf = [
     percent: 65,
   },
   {
+    name: 'INDRAPRASTHA GAS LTD',
+    symbol: 'IGL',
+    percent: 60,
+  },
+  {
+    name: 'IIFL FINANCE LIMITED',
+    symbol: 'IIFL',
+    percent: 60,
+  },
+  {
+    name: 'INDEGENE LIMITED',
+    symbol: 'INDGN',
+    percent: 65,
+  },
+  {
     name: 'THE INDIAN HOTELS CO. LTD',
     symbol: 'INDHOTEL',
     percent: 65,
+  },
+  {
+    name: 'THE INDIA CEMENTS LIMITED',
+    symbol: 'INDIACEM',
+    percent: 60,
+  },
+  {
+    name: 'INDIA GLYCOLS LTD',
+    symbol: 'INDIAGLYCO',
+    percent: 60,
   },
   {
     name: 'INDIAMART INTERMESH LTD',
@@ -852,6 +1227,11 @@ export const mtf = [
   {
     name: 'INDIAN BANK',
     symbol: 'INDIANB',
+    percent: 60,
+  },
+  {
+    name: 'INDIA SHELTER FIN CORP L',
+    symbol: 'INDIASHLTR',
     percent: 60,
   },
   {
@@ -865,14 +1245,14 @@ export const mtf = [
     percent: 65,
   },
   {
-    name: 'INDUSIND BANK LIMITED',
-    symbol: 'INDUSINDBK',
-    percent: 65,
-  },
-  {
     name: 'INDUS TOWERS LIMITED',
     symbol: 'INDUSTOWER',
     percent: 65,
+  },
+  {
+    name: 'NIP IND ETF INFRA BEES',
+    symbol: 'INFRABEES',
+    percent: 70,
   },
   {
     name: 'INFOSYS LIMITED',
@@ -880,8 +1260,18 @@ export const mtf = [
     percent: 70,
   },
   {
+    name: 'INOX INDIA LIMITED',
+    symbol: 'INOXINDIA',
+    percent: 60,
+  },
+  {
     name: 'INTELLECT DESIGN ARENA',
     symbol: 'INTELLECT',
+    percent: 60,
+  },
+  {
+    name: 'INDIAN OVERSEAS BANK',
+    symbol: 'IOB',
     percent: 60,
   },
   {
@@ -892,7 +1282,7 @@ export const mtf = [
   {
     name: 'IPCA LABORATORIES LTD',
     symbol: 'IPCALAB',
-    percent: 70,
+    percent: 65,
   },
   {
     name: 'INDIAN RAIL TOUR CORP LTD',
@@ -900,9 +1290,9 @@ export const mtf = [
     percent: 65,
   },
   {
-    name: 'ICICI SECURITIES LIMITED',
-    symbol: 'ISEC',
-    percent: 65,
+    name: 'INDIAN RENEWABLE ENERGY',
+    symbol: 'IREDA',
+    percent: 60,
   },
   {
     name: 'ITC LTD',
@@ -910,8 +1300,18 @@ export const mtf = [
     percent: 70,
   },
   {
+    name: 'ITC HOTELS LIMITED',
+    symbol: 'ITCHOTELS',
+    percent: 65,
+  },
+  {
     name: 'ICICIPRAMC - ICICITECH',
     symbol: 'ITIETF',
+    percent: 60,
+  },
+  {
+    name: 'J & K BANK LTD.',
+    symbol: 'J&KBANK',
     percent: 60,
   },
   {
@@ -922,12 +1322,22 @@ export const mtf = [
   {
     name: 'J B CHEMICALS AND PHARMA',
     symbol: 'JBCHEPHARM',
-    percent: 60,
+    percent: 65,
   },
   {
     name: 'JINDAL STEEL & POWER LTD',
     symbol: 'JINDALSTEL',
     percent: 65,
+  },
+  {
+    name: 'JIO FIN SERVICES LTD',
+    symbol: 'JIOFIN',
+    percent: 65,
+  },
+  {
+    name: 'JAIN IRRIGATION SYSTEMS',
+    symbol: 'JISLJALEQS',
+    percent: 60,
   },
   {
     name: 'JK CEMENT LIMITED',
@@ -937,6 +1347,11 @@ export const mtf = [
   {
     name: 'JK LAKSHMI CEMENT LTD',
     symbol: 'JKLAKSHMI',
+    percent: 60,
+  },
+  {
+    name: 'JK PAPER LIMITED',
+    symbol: 'JKPAPER',
     percent: 60,
   },
   {
@@ -955,6 +1370,11 @@ export const mtf = [
     percent: 60,
   },
   {
+    name: 'JSW INFRASTRUCTURE LTD',
+    symbol: 'JSWINFRA',
+    percent: 60,
+  },
+  {
     name: 'JSW STEEL LIMITED',
     symbol: 'JSWSTEEL',
     percent: 70,
@@ -962,7 +1382,7 @@ export const mtf = [
   {
     name: 'JUBILANT FOODWORKS LTD',
     symbol: 'JUBLFOOD',
-    percent: 70,
+    percent: 65,
   },
   {
     name: 'JUBILANT INGREVIA LIMITED',
@@ -970,14 +1390,29 @@ export const mtf = [
     percent: 60,
   },
   {
+    name: 'JUBILANT PHARMOVA LTD',
+    symbol: 'JUBLPHARMA',
+    percent: 60,
+  },
+  {
     name: 'NIP IND ETF JUNIOR BEES',
     symbol: 'JUNIORBEES',
+    percent: 75,
+  },
+  {
+    name: 'JUSTDIAL LTD.',
+    symbol: 'JUSTDIAL',
+    percent: 60,
+  },
+  {
+    name: 'JYOTHY LABS LIMITED',
+    symbol: 'JYOTHYLAB',
     percent: 60,
   },
   {
     name: 'KAJARIA CERAMICS LTD',
     symbol: 'KAJARIACER',
-    percent: 60,
+    percent: 65,
   },
   {
     name: 'KANSAI NEROLAC PAINTS LTD',
@@ -990,6 +1425,11 @@ export const mtf = [
     percent: 65,
   },
   {
+    name: 'KEC INTL. LIMITED',
+    symbol: 'KEC',
+    percent: 60,
+  },
+  {
     name: 'KEI INDUSTRIES LTD.',
     symbol: 'KEI',
     percent: 60,
@@ -997,6 +1437,21 @@ export const mtf = [
   {
     name: 'KRISHNA INST OF MED SCI L',
     symbol: 'KIMS',
+    percent: 65,
+  },
+  {
+    name: 'KIRLOSKAR OIL ENG LTD',
+    symbol: 'KIRLOSENG',
+    percent: 60,
+  },
+  {
+    name: 'KIRLOSKAR PNEUMATIC COM L',
+    symbol: 'KIRLPNU',
+    percent: 60,
+  },
+  {
+    name: 'KNR CONSTRU LTD.',
+    symbol: 'KNRCON',
     percent: 60,
   },
   {
@@ -1005,24 +1460,34 @@ export const mtf = [
     percent: 70,
   },
   {
+    name: 'KALPATARU PROJECT INT LTD',
+    symbol: 'KPIL',
+    percent: 60,
+  },
+  {
     name: 'KPIT TECHNOLOGIES LIMITED',
     symbol: 'KPITTECH',
     percent: 60,
   },
   {
-    name: 'KPR MILL LTD.',
-    symbol: 'KPRMILL',
+    name: 'KRBL LIMITED',
+    symbol: 'KRBL',
+    percent: 65,
+  },
+  {
+    name: 'KSB LIMITED',
+    symbol: 'KSB',
     percent: 60,
   },
   {
-    name: 'KRBL LIMITED',
-    symbol: 'KRBL',
+    name: 'KAVERI SEED CO. LTD.',
+    symbol: 'KSCL',
     percent: 60,
   },
   {
     name: 'KARNATAKA BANK LIMITED',
     symbol: 'KTKBANK',
-    percent: 60,
+    percent: 65,
   },
   {
     name: 'DR. LAL PATH LABS LTD.',
@@ -1033,6 +1498,11 @@ export const mtf = [
     name: 'LA OPALA RG LIMITED',
     symbol: 'LAOPALA',
     percent: 60,
+  },
+  {
+    name: 'LATENT VIEW ANALYTICS LTD',
+    symbol: 'LATENTVIEW',
+    percent: 65,
   },
   {
     name: 'LAURUS LABS LIMITED',
@@ -1060,9 +1530,24 @@ export const mtf = [
     percent: 60,
   },
   {
-    name: 'MACROTECH DEVELOPERS LTD',
+    name: 'LLOYDS METALS N ENERGY L',
+    symbol: 'LLOYDSME',
+    percent: 65,
+  },
+  {
+    name: 'LMW LIMITED',
+    symbol: 'LMW',
+    percent: 60,
+  },
+  {
+    name: 'LODHA DEVELOPERS LIMITED',
     symbol: 'LODHA',
     percent: 60,
+  },
+  {
+    name: 'ICICI PR NIF LW VL 30 ETF',
+    symbol: 'LOWVOLIETF',
+    percent: 70,
   },
   {
     name: 'LARSEN & TOUBRO LTD.',
@@ -1075,14 +1560,19 @@ export const mtf = [
     percent: 65,
   },
   {
+    name: 'LT FOODS LIMITED',
+    symbol: 'LTFOODS',
+    percent: 60,
+  },
+  {
     name: 'LTIMINDTREE LIMITED',
     symbol: 'LTIM',
-    percent: 70,
+    percent: 65,
   },
   {
     name: 'L&T TECHNOLOGY SER. LTD.',
     symbol: 'LTTS',
-    percent: 70,
+    percent: 65,
   },
   {
     name: 'LUPIN LIMITED',
@@ -1097,7 +1587,7 @@ export const mtf = [
   {
     name: 'MAHINDRA & MAHINDRA LTD',
     symbol: 'M&M',
-    percent: 70,
+    percent: 65,
   },
   {
     name: 'M&M FIN. SERVICES LTD',
@@ -1125,8 +1615,23 @@ export const mtf = [
     percent: 60,
   },
   {
+    name: 'MAN INFRA LTD',
+    symbol: 'MANINFRA',
+    percent: 60,
+  },
+  {
     name: 'MANKIND PHARMA LIMITED',
     symbol: 'MANKIND',
+    percent: 65,
+  },
+  {
+    name: 'VEDANT FASHIONS LIMITED',
+    symbol: 'MANYAVAR',
+    percent: 65,
+  },
+  {
+    name: 'C.E. INFO SYSTEMS LIMITED',
+    symbol: 'MAPMYINDIA',
     percent: 60,
   },
   {
@@ -1145,8 +1650,33 @@ export const mtf = [
     percent: 70,
   },
   {
+    name: 'MAS FINANCIAL SERV LTD',
+    symbol: 'MASFIN',
+    percent: 60,
+  },
+  {
     name: 'MASTEK LTD',
     symbol: 'MASTEK',
+    percent: 60,
+  },
+  {
+    name: 'MAX HEALTHCARE INS LTD',
+    symbol: 'MAXHEALTH',
+    percent: 60,
+  },
+  {
+    name: 'GLOBAL HEALTH LIMITED',
+    symbol: 'MEDANTA',
+    percent: 65,
+  },
+  {
+    name: 'MEDI ASSIST HEALTH SER L',
+    symbol: 'MEDIASSIST',
+    percent: 65,
+  },
+  {
+    name: 'MEDPLUS HEALTH SERV LTD',
+    symbol: 'MEDPLUS',
     percent: 60,
   },
   {
@@ -1157,7 +1687,7 @@ export const mtf = [
   {
     name: 'MAX FINANCIAL SERV LTD',
     symbol: 'MFSL',
-    percent: 60,
+    percent: 65,
   },
   {
     name: 'MAHANAGAR GAS LTD.',
@@ -1172,17 +1702,12 @@ export const mtf = [
   {
     name: 'MIRAEAMC - MAM150ETF',
     symbol: 'MIDCAPETF',
-    percent: 60,
+    percent: 80,
   },
   {
     name: 'ICICIPRAMC - ICICIM150',
     symbol: 'MIDCAPIETF',
-    percent: 60,
-  },
-  {
-    name: 'MISHRA DHATU NIGAM LTD',
-    symbol: 'MIDHANI',
-    percent: 60,
+    percent: 70,
   },
   {
     name: 'MINDA CORPORATION LTD',
@@ -1227,12 +1752,12 @@ export const mtf = [
   {
     name: 'MUTHOOT FINANCE LIMITED',
     symbol: 'MUTHOOTFIN',
-    percent: 70,
+    percent: 65,
   },
   {
     name: 'NIPPON L I A M LTD',
     symbol: 'NAM-INDIA',
-    percent: 65,
+    percent: 60,
   },
   {
     name: 'NATIONAL ALUMINIUM CO LTD',
@@ -1245,13 +1770,28 @@ export const mtf = [
     percent: 65,
   },
   {
+    name: 'NAVA LIMITED',
+    symbol: 'NAVA',
+    percent: 60,
+  },
+  {
     name: 'NAVIN FLUORINE INT. LTD',
     symbol: 'NAVINFLUOR',
     percent: 65,
   },
   {
+    name: 'NAZARA TECHNOLOGIES LTD',
+    symbol: 'NAZARA',
+    percent: 60,
+  },
+  {
     name: 'NCC LIMITED',
     symbol: 'NCC',
+    percent: 60,
+  },
+  {
+    name: 'NESCO LTD.',
+    symbol: 'NESCO',
     percent: 60,
   },
   {
@@ -1262,12 +1802,12 @@ export const mtf = [
   {
     name: 'ICICIPRAMC - ICICINXT50',
     symbol: 'NEXT50IETF',
-    percent: 60,
+    percent: 70,
   },
   {
     name: 'NARAYANA HRUDAYALAYA LTD.',
     symbol: 'NH',
-    percent: 60,
+    percent: 65,
   },
   {
     name: 'NHPC LTD',
@@ -1275,14 +1815,34 @@ export const mtf = [
     percent: 60,
   },
   {
+    name: 'KOTAK NIFTY ETF',
+    symbol: 'NIFTY1',
+    percent: 75,
+  },
+  {
+    name: 'DSPAMC - DSPN50ETF',
+    symbol: 'NIFTY50ADD',
+    percent: 70,
+  },
+  {
     name: 'NIP IND ETF NIFTY BEES',
     symbol: 'NIFTYBEES',
     percent: 75,
   },
   {
+    name: 'MIRAEAMC - MAN50ETF',
+    symbol: 'NIFTYETF',
+    percent: 80,
+  },
+  {
     name: 'ICICI PRUD NIFTY ETF',
     symbol: 'NIFTYIETF',
-    percent: 65,
+    percent: 75,
+  },
+  {
+    name: 'NIVA BUPA HEALTH INS CO L',
+    symbol: 'NIVABUPA',
+    percent: 60,
   },
   {
     name: 'NMDC LTD.',
@@ -1295,6 +1855,11 @@ export const mtf = [
     percent: 60,
   },
   {
+    name: 'NORTHERN ARC CAPITAL LTD',
+    symbol: 'NORTHARC',
+    percent: 65,
+  },
+  {
     name: 'NMDC STEEL LIMITED',
     symbol: 'NSLNISP',
     percent: 60,
@@ -1305,19 +1870,34 @@ export const mtf = [
     percent: 70,
   },
   {
+    name: 'NTPC GREEN ENERGY LIMITED',
+    symbol: 'NTPCGREEN',
+    percent: 65,
+  },
+  {
     name: 'NUVOCO VISTAS CORP LTD',
     symbol: 'NUVOCO',
-    percent: 60,
+    percent: 65,
   },
   {
     name: 'FSN E COMMERCE VENTURES',
     symbol: 'NYKAA',
-    percent: 60,
+    percent: 65,
   },
   {
     name: 'OBEROI REALTY LIMITED',
     symbol: 'OBEROIRLTY',
     percent: 65,
+  },
+  {
+    name: 'ORACLE FIN SERV SOFT LTD.',
+    symbol: 'OFSS',
+    percent: 60,
+  },
+  {
+    name: 'OLA ELECTRIC MOBILITY LTD',
+    symbol: 'OLAELEC',
+    percent: 60,
   },
   {
     name: 'OIL AND NATURAL GAS CORP.',
@@ -1330,9 +1910,29 @@ export const mtf = [
     percent: 60,
   },
   {
+    name: 'ORISSA MIN DEV CO LTD',
+    symbol: 'ORISSAMINE',
+    percent: 60,
+  },
+  {
     name: 'PAGE INDUSTRIES LTD',
     symbol: 'PAGEIND',
     percent: 70,
+  },
+  {
+    name: 'PARAG MILK FOODS LTD.',
+    symbol: 'PARAGMILK',
+    percent: 60,
+  },
+  {
+    name: 'PATANJALI FOODS LIMITED',
+    symbol: 'PATANJALI',
+    percent: 65,
+  },
+  {
+    name: 'PIRAMAL ENTERPRISES LTD',
+    symbol: 'PEL',
+    percent: 60,
   },
   {
     name: 'PERSISTENT SYSTEMS LTD',
@@ -1355,6 +1955,16 @@ export const mtf = [
     percent: 60,
   },
   {
+    name: 'P&G HYGIENE & HEALTH CARE',
+    symbol: 'PGHH',
+    percent: 60,
+  },
+  {
+    name: 'PROCTER & GAMBLE HEALTH L',
+    symbol: 'PGHL',
+    percent: 60,
+  },
+  {
     name: 'THE PHOENIX MILLS LTD',
     symbol: 'PHOENIXLTD',
     percent: 60,
@@ -1370,6 +1980,11 @@ export const mtf = [
     percent: 70,
   },
   {
+    name: 'PITTI ENGINEERING LIMITED',
+    symbol: 'PITTIENG',
+    percent: 60,
+  },
+  {
     name: 'PUNJAB NATIONAL BANK',
     symbol: 'PNB',
     percent: 65,
@@ -1380,13 +1995,33 @@ export const mtf = [
     percent: 60,
   },
   {
+    name: 'PNC INFRATECH LTD.',
+    symbol: 'PNCINFRA',
+    percent: 60,
+  },
+  {
     name: 'PB FINTECH LIMITED',
     symbol: 'POLICYBZR',
     percent: 60,
   },
   {
+    name: 'POLYCAB INDIA LIMITED',
+    symbol: 'POLYCAB',
+    percent: 60,
+  },
+  {
+    name: 'POLY MEDICURE LIMITED',
+    symbol: 'POLYMED',
+    percent: 60,
+  },
+  {
     name: 'POLYPLEX CORPORATION LTD',
     symbol: 'POLYPLEX',
+    percent: 60,
+  },
+  {
+    name: 'POONAWALLA FINCORP LTD',
+    symbol: 'POONAWALLA',
     percent: 60,
   },
   {
@@ -1400,6 +2035,21 @@ export const mtf = [
     percent: 60,
   },
   {
+    name: 'PIRAMAL PHARMA LIMITED',
+    symbol: 'PPLPHARMA',
+    percent: 60,
+  },
+  {
+    name: 'PRAJ INDUSTRIES LTD',
+    symbol: 'PRAJIND',
+    percent: 60,
+  },
+  {
+    name: 'PREMIER ENERGIES LIMITED',
+    symbol: 'PREMIERENE',
+    percent: 60,
+  },
+  {
     name: 'PRESTIGE ESTATE LTD',
     symbol: 'PRESTIGE',
     percent: 60,
@@ -1410,8 +2060,23 @@ export const mtf = [
     percent: 60,
   },
   {
+    name: 'PRIVI SPECIALITY CHE LTD',
+    symbol: 'PRIVISCL',
+    percent: 60,
+  },
+  {
+    name: 'KOTAK PSU BANK',
+    symbol: 'PSUBANK',
+    percent: 65,
+  },
+  {
     name: 'NIP IND ETF PSU BANK BEES',
     symbol: 'PSUBNKBEES',
+    percent: 65,
+  },
+  {
+    name: 'PTC INDIA LIMITED',
+    symbol: 'PTC',
     percent: 65,
   },
   {
@@ -1427,7 +2092,7 @@ export const mtf = [
   {
     name: 'RADICO KHAITAN LTD',
     symbol: 'RADICO',
-    percent: 60,
+    percent: 65,
   },
   {
     name: 'RAIN INDUSTRIES LIMITED',
@@ -1438,11 +2103,6 @@ export const mtf = [
     name: 'RAINBOW CHILDRENS MED LTD',
     symbol: 'RAINBOW',
     percent: 65,
-  },
-  {
-    name: 'RAJESH EXPORTS LTD',
-    symbol: 'RAJESHEXPO',
-    percent: 60,
   },
   {
     name: 'RALLIS INDIA LTD',
@@ -1495,8 +2155,23 @@ export const mtf = [
     percent: 70,
   },
   {
-    name: 'RITES LIMITED',
-    symbol: 'RITES',
+    name: 'RELIGARE ENTER. LTD.',
+    symbol: 'RELIGARE',
+    percent: 60,
+  },
+  {
+    name: 'SHREE RENUKA SUGARS LTD',
+    symbol: 'RENUKA',
+    percent: 60,
+  },
+  {
+    name: 'REPCO HOME FINANCE LTD',
+    symbol: 'REPCOHOME',
+    percent: 60,
+  },
+  {
+    name: 'RHI MAGNESITA INDIA LTD',
+    symbol: 'RHIM',
     percent: 60,
   },
   {
@@ -1505,8 +2180,18 @@ export const mtf = [
     percent: 60,
   },
   {
+    name: 'ROSSARI BIOTECH LIMITED',
+    symbol: 'ROSSARI',
+    percent: 60,
+  },
+  {
     name: 'ROUTE MOBILE LIMITED',
     symbol: 'ROUTE',
+    percent: 60,
+  },
+  {
+    name: 'RPG LIFE SCIENCES LTD',
+    symbol: 'RPGLIFE',
     percent: 60,
   },
   {
@@ -1520,14 +2205,44 @@ export const mtf = [
     percent: 60,
   },
   {
+    name: 'SAI LIFE SCIENCES LIMITED',
+    symbol: 'SAILIFE',
+    percent: 60,
+  },
+  {
+    name: 'SAMHI HOTELS LIMITED',
+    symbol: 'SAMHI',
+    percent: 65,
+  },
+  {
+    name: 'SANOFI INDIA LIMITED',
+    symbol: 'SANOFI',
+    percent: 60,
+  },
+  {
+    name: 'SANOFI CONS HEALTHC IND L',
+    symbol: 'SANOFICONR',
+    percent: 60,
+  },
+  {
+    name: 'SANSERA ENGINEERING LTD',
+    symbol: 'SANSERA',
+    percent: 60,
+  },
+  {
     name: 'SAPPHIRE FOODS INDIA LTD',
     symbol: 'SAPPHIRE',
     percent: 60,
   },
   {
+    name: 'SAREGAMA INDIA LIMITED',
+    symbol: 'SAREGAMA',
+    percent: 60,
+  },
+  {
     name: 'SBFC FINANCE LIMITED',
     symbol: 'SBFC',
-    percent: 60,
+    percent: 65,
   },
   {
     name: 'SBI CARDS & PAY SER LTD',
@@ -1547,21 +2262,36 @@ export const mtf = [
   {
     name: 'SCHAEFFLER INDIA LIMITED',
     symbol: 'SCHAEFFLER',
+    percent: 65,
+  },
+  {
+    name: 'SOM DIST & BREW LTD',
+    symbol: 'SDBL',
     percent: 60,
+  },
+  {
+    name: 'ICICI PRUD SENSEX ETF',
+    symbol: 'SENSEXIETF',
+    percent: 70,
   },
   {
     name: 'SBI-ETF NIFTY 50',
     symbol: 'SETFNIF50',
-    percent: 65,
+    percent: 75,
+  },
+  {
+    name: 'SBI-ETF NIFTY BANK',
+    symbol: 'SETFNIFBK',
+    percent: 70,
+  },
+  {
+    name: 'SHEELA FOAM LIMITED',
+    symbol: 'SFL',
+    percent: 60,
   },
   {
     name: 'SHALBY LIMITED',
     symbol: 'SHALBY',
-    percent: 60,
-  },
-  {
-    name: 'SHILPA MEDICARE LTD',
-    symbol: 'SHILPAMED',
     percent: 60,
   },
   {
@@ -1580,14 +2310,29 @@ export const mtf = [
     percent: 65,
   },
   {
+    name: 'SHYAM METALICS AND ENGY L',
+    symbol: 'SHYAMMETL',
+    percent: 60,
+  },
+  {
     name: 'SIEMENS LTD',
     symbol: 'SIEMENS',
     percent: 65,
   },
   {
+    name: 'SIGNATUREGLOBAL INDIA LTD',
+    symbol: 'SIGNATURE',
+    percent: 65,
+  },
+  {
+    name: 'SJS ENTERPRISES LIMITED',
+    symbol: 'SJS',
+    percent: 60,
+  },
+  {
     name: 'SKF INDIA LTD',
     symbol: 'SKFINDIA',
-    percent: 60,
+    percent: 65,
   },
   {
     name: 'SOBHA LIMITED',
@@ -1600,19 +2345,14 @@ export const mtf = [
     percent: 60,
   },
   {
-    name: 'SONATA SOFTWARE LTD',
-    symbol: 'SONATSOFTW',
-    percent: 60,
-  },
-  {
     name: 'SAVITA OIL TECHNOLO. LTD',
     symbol: 'SOTL',
     percent: 60,
   },
   {
-    name: 'SPANDANA SPHOORTY FIN LTD',
-    symbol: 'SPANDANA',
-    percent: 60,
+    name: 'THE SOUTH INDIAN BANK LTD',
+    symbol: 'SOUTHBANK',
+    percent: 65,
   },
   {
     name: 'SRF LTD',
@@ -1625,13 +2365,13 @@ export const mtf = [
     percent: 65,
   },
   {
-    name: 'STERLITE TECHNOLOGIES LTD',
-    symbol: 'STLTECH',
-    percent: 60,
+    name: 'STAR HEALTH & AL INS CO L',
+    symbol: 'STARHEALTH',
+    percent: 65,
   },
   {
-    name: 'SUBEX LTD',
-    symbol: 'SUBEXLTD',
+    name: 'STYRENIX PERFORMANCE LTD',
+    symbol: 'STYRENIX',
     percent: 60,
   },
   {
@@ -1640,14 +2380,24 @@ export const mtf = [
     percent: 60,
   },
   {
+    name: 'SULA VINEYARDS LIMITED',
+    symbol: 'SULA',
+    percent: 60,
+  },
+  {
     name: 'SUMITOMO CHEM INDIA LTD',
     symbol: 'SUMICHEM',
-    percent: 60,
+    percent: 65,
   },
   {
     name: 'SUNDARAM FINANCE LTD',
     symbol: 'SUNDARMFIN',
-    percent: 60,
+    percent: 65,
+  },
+  {
+    name: 'SUNDRAM FASTENERS LTD',
+    symbol: 'SUNDRMFAST',
+    percent: 65,
   },
   {
     name: 'SUN PHARMACEUTICAL IND L',
@@ -1675,14 +2425,29 @@ export const mtf = [
     percent: 60,
   },
   {
-    name: 'SUVEN PHARMACEUTICALS LTD',
-    symbol: 'SUVENPHAR',
+    name: 'SWARAJ ENGINES LTD',
+    symbol: 'SWARAJENG',
+    percent: 60,
+  },
+  {
+    name: 'SWIGGY LIMITED',
+    symbol: 'SWIGGY',
+    percent: 60,
+  },
+  {
+    name: 'SYMPHONY LIMITED',
+    symbol: 'SYMPHONY',
     percent: 60,
   },
   {
     name: 'SYNGENE INTERNATIONAL LTD',
     symbol: 'SYNGENE',
     percent: 70,
+  },
+  {
+    name: 'SYRMA SGS TECHNOLOGY LTD',
+    symbol: 'SYRMA',
+    percent: 60,
   },
   {
     name: 'TANLA PLATFORMS LIMITED',
@@ -1705,9 +2470,19 @@ export const mtf = [
     percent: 70,
   },
   {
+    name: 'TATA ELXSI LIMITED',
+    symbol: 'TATAELXSI',
+    percent: 65,
+  },
+  {
+    name: 'TATA INVESTMENT CORP LTD',
+    symbol: 'TATAINVEST',
+    percent: 65,
+  },
+  {
     name: 'TATA MOTORS LIMITED',
     symbol: 'TATAMOTORS',
-    percent: 70,
+    percent: 65,
   },
   {
     name: 'TATA POWER CO LTD',
@@ -1717,7 +2492,17 @@ export const mtf = [
   {
     name: 'TATA STEEL LIMITED',
     symbol: 'TATASTEEL',
+    percent: 65,
+  },
+  {
+    name: 'TATA TECHNOLOGIES LIMITED',
+    symbol: 'TATATECH',
     percent: 70,
+  },
+  {
+    name: 'TBO TEK LIMITED',
+    symbol: 'TBOTEK',
+    percent: 65,
   },
   {
     name: 'TATA CONSULTANCY SERV LT',
@@ -1755,9 +2540,19 @@ export const mtf = [
     percent: 60,
   },
   {
+    name: 'THIRUMALAI CHEMICALS LTD',
+    symbol: 'TIRUMALCHM',
+    percent: 60,
+  },
+  {
     name: 'TITAN COMPANY LIMITED',
     symbol: 'TITAN',
     percent: 70,
+  },
+  {
+    name: 'TAMILNAD MERCA BANK LTD',
+    symbol: 'TMB',
+    percent: 60,
   },
   {
     name: 'TAMILNADU PETROPRODUCTS L',
@@ -1775,6 +2570,26 @@ export const mtf = [
     percent: 60,
   },
   {
+    name: 'TRANSRAIL LIGHTING LTD',
+    symbol: 'TRANSRAILL',
+    percent: 60,
+  },
+  {
+    name: 'TRENT LTD',
+    symbol: 'TRENT',
+    percent: 60,
+  },
+  {
+    name: 'TRIDENT LIMITED',
+    symbol: 'TRIDENT',
+    percent: 65,
+  },
+  {
+    name: 'TRIVENI ENGG. & INDS. LTD',
+    symbol: 'TRIVENI',
+    percent: 60,
+  },
+  {
     name: 'TTK PRESTIGE LTD',
     symbol: 'TTKPRESTIG',
     percent: 60,
@@ -1785,9 +2600,19 @@ export const mtf = [
     percent: 70,
   },
   {
+    name: 'TVS SUPPLY CHAIN SOL L',
+    symbol: 'TVSSCS',
+    percent: 60,
+  },
+  {
     name: 'UNITED BREWERIES LTD',
     symbol: 'UBL',
     percent: 70,
+  },
+  {
+    name: 'UJJIVAN SMALL FINANC BANK',
+    symbol: 'UJJIVANSFB',
+    percent: 60,
   },
   {
     name: 'ULTRATECH CEMENT LIMITED',
@@ -1815,9 +2640,24 @@ export const mtf = [
     percent: 65,
   },
   {
+    name: 'USHA MARTIN LTD.',
+    symbol: 'USHAMART',
+    percent: 60,
+  },
+  {
     name: 'UTI ASSET MNGMT CO LTD',
     symbol: 'UTIAMC',
-    percent: 60,
+    percent: 65,
+  },
+  {
+    name: 'UTIAMC - UTIBANKETF',
+    symbol: 'UTIBANKETF',
+    percent: 70,
+  },
+  {
+    name: 'UTIAMC - UTINIFTETF',
+    symbol: 'UTINIFTETF',
+    percent: 75,
   },
   {
     name: 'UTKARSH SMALL FIN BANK L',
@@ -1825,13 +2665,28 @@ export const mtf = [
     percent: 60,
   },
   {
+    name: 'VAIBHAV GLOBAL LIMITED',
+    symbol: 'VAIBHAVGBL',
+    percent: 60,
+  },
+  {
+    name: 'VARROC ENGINEERING LTD.',
+    symbol: 'VARROC',
+    percent: 60,
+  },
+  {
     name: 'VARUN BEVERAGES LIMITED',
     symbol: 'VBL',
-    percent: 60,
+    percent: 65,
   },
   {
     name: 'V-GUARD IND LTD.',
     symbol: 'VGUARD',
+    percent: 65,
+  },
+  {
+    name: 'VIJAYA DIAGNOSTIC CEN LTD',
+    symbol: 'VIJAYA',
     percent: 60,
   },
   {
@@ -1842,12 +2697,27 @@ export const mtf = [
   {
     name: 'VIP INDUSTRIES LTD',
     symbol: 'VIPIND',
-    percent: 60,
+    percent: 65,
+  },
+  {
+    name: 'VMART RETAIL LTD',
+    symbol: 'VMART',
+    percent: 65,
   },
   {
     name: 'VOLTAS LTD',
     symbol: 'VOLTAS',
-    percent: 70,
+    percent: 65,
+  },
+  {
+    name: 'VISHNU PRAKASH R PUNGLI L',
+    symbol: 'VPRPL',
+    percent: 60,
+  },
+  {
+    name: 'VST INDUSTRIES LTD',
+    symbol: 'VSTIND',
+    percent: 60,
   },
   {
     name: 'VARDHMAN TEXTILES LIMITED',
@@ -1867,7 +2737,7 @@ export const mtf = [
   {
     name: 'WHIRLPOOL OF INDIA LTD',
     symbol: 'WHIRLPOOL',
-    percent: 70,
+    percent: 60,
   },
   {
     name: 'WIPRO LTD',
@@ -1880,9 +2750,9 @@ export const mtf = [
     percent: 65,
   },
   {
-    name: 'ZOMATO LIMITED',
-    symbol: 'ZOMATO',
-    percent: 60,
+    name: 'YATHARTH HOSP & TRA C S L',
+    symbol: 'YATHARTH',
+    percent: 65,
   },
   {
     name: 'ZYDUS LIFESCIENCES LTD',
