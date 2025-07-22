@@ -1,5 +1,14 @@
 import * as React from 'react';
-import { Box, Grid, Button, Input, Paper, Typography } from '@mui/material';
+import {
+  Box,
+  Grid,
+  Button,
+  Input,
+  Paper,
+  Typography,
+  TextField,
+  MenuItem,
+} from '@mui/material';
 import { useState } from 'react';
 import readXlsxFile from 'read-excel-file';
 import { CloudUpload as CloudUploadIcon } from '@mui/icons-material';
@@ -16,6 +25,7 @@ export default function FileUpload() {
   const [rows, setRows] = useState([]);
   const [showAlert, setShowAlert] = useState(false);
   const [fileName, setFileName] = useState('');
+  const [broker, setBroker] = useState('MSTOCK');
 
   const handleFileChange = (event) => {
     const selectedFile = event.target.files[0];
@@ -39,7 +49,7 @@ export default function FileUpload() {
 
     try {
       const data = await readXlsxFile(file);
-      const processedData = handleData(data);
+      const processedData = handleData(data, broker);
       if (processedData.length > 0) {
         setRows(processedData);
         setShowTable(true);
@@ -57,6 +67,10 @@ export default function FileUpload() {
     setShowAlert(false);
   };
 
+  const handleBrokerChange = (event) => {
+    setBroker(event.target.value);
+  };
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={2} justifyContent="center" alignItems="center">
@@ -65,6 +79,8 @@ export default function FileUpload() {
             fileName={fileName}
             onSubmit={handleSubmit}
             onFileChange={handleFileChange}
+            setBroker={handleBrokerChange}
+            broker={broker}
           />
         </Grid>
         <Grid item xs={12}>
@@ -82,7 +98,7 @@ export default function FileUpload() {
   );
 }
 
-function UploadForm({ fileName, onSubmit, onFileChange }) {
+function UploadForm({ fileName, onSubmit, onFileChange, setBroker, broker }) {
   return (
     <Paper
       sx={{
@@ -119,6 +135,44 @@ function UploadForm({ fileName, onSubmit, onFileChange }) {
           inputProps={{ accept: '.xlsx' }}
           id="excel-file-input"
         />
+
+        <TextField
+          fullWidth
+          select
+          label="Select Broker"
+          value={broker}
+          onChange={setBroker}
+          variant="outlined"
+          color="primary"
+          sx={{
+            margin: '1rem',
+            width: '70%',
+            borderRadius: '1rem',
+            '& .MuiOutlinedInput-root': {
+              borderRadius: '1rem',
+              fontWeight: 'bold',
+              color: ColorCodes.text,
+              '& fieldset': {
+                borderColor: ColorCodes.border,
+                borderWidth: '2px',
+              },
+              '&:hover fieldset': {
+                borderColor: ColorCodes.border,
+              },
+              '&.Mui-focused fieldset': {
+                borderColor: ColorCodes.border,
+              },
+            },
+            '& .MuiInputLabel-root': {
+              color: ColorCodes.text,
+              fontWeight: 'bold',
+            },
+          }}
+        >
+          <MenuItem value="MSTOCK">MSTOCK</MenuItem>
+          <MenuItem value="ZERODHA">ZERODHA</MenuItem>
+        </TextField>
+
         {fileName && (
           <Button
             variant="outlined"
