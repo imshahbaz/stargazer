@@ -29,4 +29,9 @@ export const chartink_strategy = [
     link: 'https://chartink.com/screener/open-surge-0-6',
     display: true,
   },
+{
+    name: 'Gap Up',
+    link: 'https://chartink.com/screener/gap-up-151057',
+    display: true,
+  },
 ];
