@@ -43,10 +43,14 @@ export const handleData = (data, broker) => {
 export const searchMargin = (query) => {
   if (query === '') return [];
 
-  return mtf.filter((stock) => {
-    return (
-      stock.symbol.toLowerCase().includes(query.toLowerCase()) ||
-      stock.name.toLowerCase().includes(query.toLowerCase())
-    );
+  return zerodhaMtf.filter((stock) => {
+    return stock.symbol.toLowerCase().includes(query.toLowerCase());
   });
+
+  // return mtf.filter((stock) => {
+  //   return (
+  //     stock.symbol.toLowerCase().includes(query.toLowerCase()) ||
+  //     stock.name.toLowerCase().includes(query.toLowerCase())
+  //   );
+  // });
 };

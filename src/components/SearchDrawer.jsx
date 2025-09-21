@@ -18,12 +18,15 @@ import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableRow from '@mui/material/TableRow';
+import ProfitCalculator from './ProfitCalculator';
 
 export default function SearchDrawer(props) {
   const [result, setResult] = useState({
     query: '',
     list: [],
   });
+  const [calculatorOpen, setCalculatorOpen] = useState(false);
+  const [selectedRow, setSelectedRow] = useState(null);
 
   const textFieldRef = useRef(null);
 
@@ -39,7 +42,17 @@ export default function SearchDrawer(props) {
   function toggle() {
     props.handleShow(!props.open);
     setResult({ query: '', list: [] });
+    setCalculatorOpen(false);
   }
+
+  const handleRowClick = (row) => {
+    if (calculatorOpen) {
+      setSelectedRow(null);
+    } else {
+      setSelectedRow(row);
+    }
+    setCalculatorOpen(!calculatorOpen); // Open calculator
+  };
 
   useEffect(() => {
     if (props.open) {
@@ -99,15 +112,20 @@ export default function SearchDrawer(props) {
         </Stack>
         <Divider color={ColorCodes.border}></Divider>
         {result.list.length > 0 && (
-          <PopulateSearch rows={result.list}></PopulateSearch>
+          <PopulateSearch
+            rows={result.list}
+            onRowClick={handleRowClick}
+            selectedRow={selectedRow}
+          ></PopulateSearch>
         )}
       </Box>
     </Drawer>
   );
 }
 
-const PopulateSearch = (props) => {
+const PopulateSearch = ({ rows, onRowClick, selectedRow }) => {
   const style = { color: ColorCodes.text };
+
   return (
     <Paper>
       <TableContainer
@@ -118,37 +136,58 @@ const PopulateSearch = (props) => {
       >
         <Table aria-label="simple table" stickyHeader>
           <TableBody>
-            {props.rows.map((row) => (
-              <TableRow
-                key={row.name}
-                sx={{
-                  '&:last-child td, &:last-child th': { border: 0 },
-                  textAlign: 'left',
-                }}
-              >
-                <TableCell
-                  component="th"
-                  scope="row"
-                  align="center"
-                  style={style}
-                  sx={{ textAlign: 'center' }}
+            {rows.map((row) => (
+              <React.Fragment key={row.symbol}>
+                <TableRow
+                  sx={{
+                    '&:last-child td, &:last-child th': { border: 0 },
+                    textAlign: 'left',
+                    cursor: 'pointer',
+                  }}
+                  onClick={() => onRowClick(row)}
                 >
-                  <Typography sx={{ fontSize: FontSize.text }}>
-                    {row.name}
-                  </Typography>
-                  <Typography sx={{ fontSize: FontSize.text }}>
-                    {row.symbol}
-                  </Typography>
-                </TableCell>
-                <TableCell align="center" style={style}>
-                  {row.percent}
-                </TableCell>
-              </TableRow>
+                  <TableCell
+                    component="th"
+                    scope="row"
+                    align="center"
+                    style={style}
+                  >
+                    <Typography sx={{ fontSize: FontSize.text }}>
+                      {row.symbol}
+                    </Typography>
+                  </TableCell>
+                  <TableCell align="center" style={style}>
+                    {row.leverage}
+                  </TableCell>
+                </TableRow>
+
+                {selectedRow?.symbol === row.symbol && (
+                  <Box
+                    sx={{
+                      mt: 1,
+                      p: 2,
+                      backgroundColor: ColorCodes.inputBackground,
+                      borderRadius: 2,
+                    }}
+                  >
+                    <ProfitCalculator
+                      defaultValues={{
+                        leverage: row.leverage,
+                        buyPrice: '',
+                        sellPrice: '',
+                        quantity: '',
+                        daysHeld: '',
+                        symbol: row.symbol,
+                      }}
+                    />
+                  </Box>
+                )}
+              </React.Fragment>
             ))}
           </TableBody>
         </Table>
       </TableContainer>
-      <Divider sx={{ color: ColorCodes.border }}></Divider>
+      <Divider sx={{ color: ColorCodes.border }} />
     </Paper>
   );
 };
