@@ -25,7 +25,7 @@ export default function SearchDrawer(props) {
     query: '',
     list: [],
   });
-  const [calculatorOpen, setCalculatorOpen] = useState(false);
+
   const [selectedRow, setSelectedRow] = useState(null);
 
   const textFieldRef = useRef(null);
@@ -42,16 +42,14 @@ export default function SearchDrawer(props) {
   function toggle() {
     props.handleShow(!props.open);
     setResult({ query: '', list: [] });
-    setCalculatorOpen(false);
   }
 
   const handleRowClick = (row) => {
-    if (calculatorOpen) {
+    if (selectedRow != null && selectedRow.symbol === row.symbol) {
       setSelectedRow(null);
     } else {
       setSelectedRow(row);
     }
-    setCalculatorOpen(!calculatorOpen); // Open calculator
   };
 
   useEffect(() => {

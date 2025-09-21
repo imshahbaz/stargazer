@@ -38,24 +38,28 @@ const ProfitCalculator = ({ defaultValues = {} }) => {
     const margin = totalInvestment / lev;
     const fundingAmount = totalInvestment - margin;
     const interest = (fundingAmount * 0.15 * days) / 365;
-    const profit = (sp - bp) * qty * lev;
+    const profit = (sp - bp) * qty;
     const turnover = (bp + sp) * qty;
     const brokerage = 20 * 2;
-    const STT = turnover * 0.001;
-    const otherTaxes = turnover * 0.0005;
-    const totalCharges = brokerage + STT + otherTaxes;
+    const STT = days > 0 ? turnover * 0.001 : qty * sp * 0.00025;
+    const stampCharges = qty * bp * (days > 0 ? 0.00015 : 0.00003);
+    const transactionCharges = turnover * 0.0000297;
+    const sebiCharges = turnover * 0.000001;
+    const gst = 0.18 * (sebiCharges + brokerage + transactionCharges);
+    const totalCharges =
+      brokerage + STT + sebiCharges + stampCharges + transactionCharges + gst;
     const netProfit = profit - interest - totalCharges;
     const profitPercent = (netProfit / margin) * 100;
 
     setResult({
-      totalInvestment,
-      margin,
-      fundingAmount,
+      totalInvestment: totalInvestment.toFixed(2),
+      margin: margin.toFixed(2),
+      fundingAmount: fundingAmount.toFixed(2),
       interest: interest.toFixed(2),
       profit: profit.toFixed(2),
-      brokerage: brokerage.toFixed(2),
-      STT: STT.toFixed(2),
-      otherTaxes: otherTaxes.toFixed(2),
+      // brokerage: brokerage.toFixed(2),
+      // STT: STT.toFixed(2),
+      // otherTaxes: otherTaxes.toFixed(2),
       totalCharges: totalCharges.toFixed(2),
       netProfit: netProfit.toFixed(2),
       profitPercent: profitPercent.toFixed(2),
@@ -171,9 +175,9 @@ const ProfitCalculator = ({ defaultValues = {} }) => {
             <Typography>Funding Amount: ₹{result.fundingAmount}</Typography>
             <Typography>Interest (15% p.a.): ₹{result.interest}</Typography>
             <Typography>Profit/Loss (Leveraged): ₹{result.profit}</Typography>
-            <Typography>Brokerage: ₹{result.brokerage}</Typography>
+            {/* <Typography>Brokerage: ₹{result.brokerage}</Typography>
             <Typography>STT: ₹{result.STT}</Typography>
-            <Typography>Other Taxes: ₹{result.otherTaxes}</Typography>
+            <Typography>Other Taxes: ₹{result.otherTaxes}</Typography> */}
             <Typography>
               <strong>Total Charges: ₹{result.totalCharges}</strong>
             </Typography>
