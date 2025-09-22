@@ -2,55 +2,44 @@ import { mtf } from '../constants/MStock';
 import { zerodhaMtf } from '../constants/Zerodha';
 
 export const handleData = (data, broker) => {
-  const priceData = [];
-  const priceNames = [];
-  for (let i = 0; i < data.length; i++) {
-    if (i === 0 || i === 1) continue;
-    const name = data[i][2];
-    priceData.push({ name: name, price: data[i][5] });
-    priceNames.push(name);
-  }
+  if (!data || data.length < 3) return [];
 
-  const marginData =
-    broker === 'MSTOCK'
-      ? mtf.map((stock) => {
-          return stock.symbol;
-        })
-      : zerodhaMtf.map((stock) => {
-          return stock.symbol;
-        });
+  // Extract price data from Excel
+  const priceData = data.slice(2).map((row) => ({
+    name: row[2],
+    price: row[5],
+  }));
 
-  const commonData = priceNames.filter((name) => marginData.includes(name));
+  const priceNames = priceData.map((p) => p.name);
 
-  const response =
-    broker === 'MSTOCK'
-      ? commonData.map((name) => {
-          const margin = mtf.find((stock) => stock.symbol === name);
-          const price = priceData.find((stock) => stock.name === name);
-          return { name: name, margin: margin.percent, price: price['price'] };
-        })
-      : commonData.map((name) => {
-          const margin = zerodhaMtf.find((stock) => stock.symbol === name);
-          const price = priceData.find((stock) => stock.name === name);
-          return { name: name, margin: margin.leverage, price: price['price'] };
-        });
+  // Select broker data
+  const brokerData = broker === 'MSTOCK' ? mtf : zerodhaMtf;
+  const marginMap = Object.fromEntries(
+    brokerData.map((stock) => [
+      stock.symbol,
+      broker === 'MSTOCK' ? stock.percent : stock.leverage,
+    ])
+  );
 
-  return response.sort((a, b) => {
-    return b.margin - a.margin;
-  });
+  // Find common stocks and combine data
+  const response = priceNames
+    .filter((name) => marginMap[name] !== undefined)
+    .map((name) => ({
+      name,
+      margin: marginMap[name],
+      price: priceData.find((p) => p.name === name).price,
+    }));
+
+  // Sort by margin descending
+  return response.sort((a, b) => b.margin - a.margin);
 };
 
+// Search stocks by symbol
 export const searchMargin = (query) => {
-  if (query === '') return [];
+  if (!query) return [];
+  const lowerQuery = query.toLowerCase();
 
-  return zerodhaMtf.filter((stock) => {
-    return stock.symbol.toLowerCase().includes(query.toLowerCase());
-  });
-
-  // return mtf.filter((stock) => {
-  //   return (
-  //     stock.symbol.toLowerCase().includes(query.toLowerCase()) ||
-  //     stock.name.toLowerCase().includes(query.toLowerCase())
-  //   );
-  // });
+  return zerodhaMtf.filter((stock) =>
+    stock.symbol.toLowerCase().includes(lowerQuery)
+  );
 };

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import {
   Box,
   Grid,
@@ -9,7 +9,6 @@ import {
   TextField,
   MenuItem,
 } from '@mui/material';
-import { useState } from 'react';
 import readXlsxFile from 'read-excel-file';
 import { CloudUpload as CloudUploadIcon } from '@mui/icons-material';
 import AlertInfo from '../components/AlertInfo';
@@ -21,11 +20,11 @@ import StockDetailsTable from './StockDetailsTable';
 
 export default function FileUpload() {
   const [file, setFile] = useState(null);
-  const [showTable, setShowTable] = useState(false);
-  const [rows, setRows] = useState([]);
-  const [showAlert, setShowAlert] = useState(false);
   const [fileName, setFileName] = useState('');
-  const [broker, setBroker] = useState('MSTOCK');
+  const [broker, setBroker] = useState('ZERODHA');
+  const [rows, setRows] = useState([]);
+  const [showTable, setShowTable] = useState(false);
+  const [showAlert, setShowAlert] = useState(false);
 
   const handleFileChange = (event) => {
     const selectedFile = event.target.files[0];
@@ -45,7 +44,7 @@ export default function FileUpload() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    if (!file) return; // Prevent submission if no file is selected
+    if (!file) return;
 
     try {
       const data = await readXlsxFile(file);
@@ -54,6 +53,7 @@ export default function FileUpload() {
         setRows(processedData);
         setShowTable(true);
       } else {
+        setRows([]);
         setShowTable(false);
         setShowAlert(true);
       }
@@ -61,14 +61,6 @@ export default function FileUpload() {
       console.error('Error reading file:', error);
       setShowAlert(true);
     }
-  };
-
-  const handleCloseAlert = () => {
-    setShowAlert(false);
-  };
-
-  const handleBrokerChange = (event) => {
-    setBroker(event.target.value);
   };
 
   return (
@@ -79,8 +71,8 @@ export default function FileUpload() {
             fileName={fileName}
             onSubmit={handleSubmit}
             onFileChange={handleFileChange}
-            setBroker={handleBrokerChange}
             broker={broker}
+            setBroker={setBroker} // <-- fixed
           />
         </Grid>
         <Grid item xs={12}>
@@ -90,7 +82,7 @@ export default function FileUpload() {
           <AlertInfo
             open={showAlert}
             message="No stocks found for this strategy. Please choose a different strategy."
-            handleClose={handleCloseAlert}
+            handleClose={() => setShowAlert(false)}
           />
         </Grid>
       </Grid>
@@ -98,19 +90,20 @@ export default function FileUpload() {
   );
 }
 
-function UploadForm({ fileName, onSubmit, onFileChange, setBroker, broker }) {
+function UploadForm({ fileName, onSubmit, onFileChange, broker, setBroker }) {
   return (
     <Paper
       sx={{
-        padding: '1rem',
+        p: 2,
         borderRadius: '2rem',
         backgroundColor: ColorCodes.main,
-        marginTop: '1rem',
+        mt: 2,
       }}
     >
-      <Typography style={{ color: ColorCodes.text, fontWeight: 'bold' }}>
+      <Typography sx={{ color: ColorCodes.text, fontWeight: 'bold', mb: 2 }}>
         Upload Excel File
       </Typography>
+
       <form onSubmit={onSubmit}>
         <Box
           className="upload-input"
@@ -122,46 +115,39 @@ function UploadForm({ fileName, onSubmit, onFileChange, setBroker, broker }) {
             className="upload-input-image"
           />
         </Box>
+
         {fileName && (
-          <section className="filename-section">
-            <span className="filename-span">Selected File: {fileName}</span>
-          </section>
+          <Box sx={{ mt: 1, mb: 2 }}>
+            <Typography sx={{ color: ColorCodes.text }}>
+              Selected File: {fileName}
+            </Typography>
+          </Box>
         )}
+
         <Input
           type="file"
           required
-          style={{ margin: '1rem', display: 'none' }}
+          id="excel-file-input"
           onChange={onFileChange}
           inputProps={{ accept: '.xlsx' }}
-          id="excel-file-input"
+          sx={{ display: 'none' }}
         />
 
         <TextField
-          fullWidth
           select
+          fullWidth
           label="Select Broker"
           value={broker}
-          onChange={setBroker}
-          variant="outlined"
-          color="primary"
+          onChange={(e) => setBroker(e.target.value)}
           sx={{
-            margin: '1rem',
-            width: '70%',
-            borderRadius: '1rem',
+            mb: 2,
             '& .MuiOutlinedInput-root': {
               borderRadius: '1rem',
-              fontWeight: 'bold',
               color: ColorCodes.text,
-              '& fieldset': {
-                borderColor: ColorCodes.border,
-                borderWidth: '2px',
-              },
-              '&:hover fieldset': {
-                borderColor: ColorCodes.border,
-              },
-              '&.Mui-focused fieldset': {
-                borderColor: ColorCodes.border,
-              },
+              fontWeight: 'bold',
+              '& fieldset': { borderColor: ColorCodes.border, borderWidth: 2 },
+              '&:hover fieldset': { borderColor: ColorCodes.border },
+              '&.Mui-focused fieldset': { borderColor: ColorCodes.border },
             },
             '& .MuiInputLabel-root': {
               color: ColorCodes.text,
@@ -175,19 +161,19 @@ function UploadForm({ fileName, onSubmit, onFileChange, setBroker, broker }) {
 
         {fileName && (
           <Button
+            type="submit"
             variant="outlined"
-            color="primary"
-            style={{
-              margin: '1rem',
-              borderRadius: '1rem',
+            startIcon={<CloudUploadIcon />}
+            sx={{
               width: '70%',
+              borderRadius: '1rem',
               color: ColorCodes.text,
               border: '2px solid ' + ColorCodes.border,
               fontWeight: 'bold',
+              display: 'block',
+              mx: 'auto',
+              mt: 2,
             }}
-            type="submit"
-            size="large"
-            startIcon={<CloudUploadIcon />}
           >
             Upload
           </Button>

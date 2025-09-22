@@ -3,6 +3,7 @@ export const ColorCodes = {
   element: '#c2c2c0',
   border: '#c2c2c0',
   text: '#abbbc8',
+  new: '#D1D0D0',
 };
 
 export const FontSize = {

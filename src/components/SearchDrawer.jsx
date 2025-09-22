@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import {
   Box,
   Divider,
@@ -7,59 +7,49 @@ import {
   TextField,
   Typography,
   Paper,
+  IconButton,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableRow,
 } from '@mui/material';
-import IconButton from '@mui/material/IconButton';
 import { ChevronLeft } from '@mui/icons-material';
 import { ColorCodes, FontSize, IconSize } from '../constants/ColorCodes';
 import { searchMargin } from '../utils/FileUtils';
-import { useState } from 'react';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableRow from '@mui/material/TableRow';
 import ProfitCalculator from './ProfitCalculator';
 
-export default function SearchDrawer(props) {
-  const [result, setResult] = useState({
-    query: '',
-    list: [],
-  });
-
+export default function SearchDrawer({ open, handleShow }) {
+  const [searchResult, setSearchResult] = useState({ query: '', list: [] });
   const [selectedRow, setSelectedRow] = useState(null);
-
   const textFieldRef = useRef(null);
 
-  const handleChange = (e) => {
-    const result = searchMargin(e.target.value);
-    console.log(result);
-    setResult({
-      query: e.target.value,
-      list: result,
-    });
-  };
-
-  function toggle() {
-    props.handleShow(!props.open);
-    setResult({ query: '', list: [] });
-  }
-
-  const handleRowClick = (row) => {
-    if (selectedRow != null && selectedRow.symbol === row.symbol) {
-      setSelectedRow(null);
-    } else {
-      setSelectedRow(row);
-    }
-  };
-
   useEffect(() => {
-    if (props.open) {
+    if (open && textFieldRef.current) {
       textFieldRef.current.focus();
     }
-  }, [props.open]);
+  }, [open]);
+
+  const handleChange = (e) => {
+    const list = searchMargin(e.target.value);
+    setSearchResult({ query: e.target.value, list });
+  };
+
+  const toggleDrawer = () => {
+    handleShow(!open);
+    setSearchResult({ query: '', list: [] });
+    setSelectedRow(null);
+  };
+
+  const handleRowClick = (row) => {
+    setSelectedRow((prev) => (prev?.symbol === row.symbol ? null : row));
+  };
 
   return (
     <Drawer
+      variant="persistent"
+      anchor="right"
+      open={open}
       sx={{
         flexGrow: 1,
         flexShrink: 0,
@@ -68,53 +58,37 @@ export default function SearchDrawer(props) {
           backgroundColor: ColorCodes.main,
         },
       }}
-      variant="persistent"
-      anchor="right"
-      open={props.open}
     >
-      <Box sx={{ paddingTop: '.5rem' }}>
-        <Stack
-          direction="row"
-          justifyContent="start"
-          alignItems="center"
-          sx={{ flexGrow: 1 }}
-        >
-          <IconButton onClick={toggle}>
+      <Box sx={{ pt: 0.5 }}>
+        <Stack direction="row" alignItems="center" spacing={1} sx={{ mb: 1 }}>
+          <IconButton onClick={toggleDrawer}>
             <ChevronLeft
-              style={{ fontSize: IconSize.large, color: ColorCodes.element }}
+              sx={{ fontSize: IconSize.large, color: ColorCodes.element }}
             />
           </IconButton>
-
           <TextField
             inputRef={textFieldRef}
-            value={result.query}
+            value={searchResult.query}
             placeholder="Search Margin"
             fullWidth
-            id="fullWidth"
-            sx={{
-              flexGrow: 1,
-              color: ColorCodes.text,
-              '& .MuiOutlinedInput-root': {
-                '& fieldset': {
-                  border: 'none',
-                },
-              },
-              '& .MuiOutlinedInput-input': {
-                color: ColorCodes.text,
-              },
-            }}
-            onChange={handleChange}
             autoComplete="off"
-            autoFocus={true}
+            autoFocus
+            onChange={handleChange}
+            sx={{
+              '& .MuiOutlinedInput-root': { '& fieldset': { border: 'none' } },
+              '& .MuiOutlinedInput-input': { color: ColorCodes.text },
+            }}
           />
         </Stack>
-        <Divider color={ColorCodes.border}></Divider>
-        {result.list.length > 0 && (
+
+        <Divider sx={{ borderColor: ColorCodes.border }} />
+
+        {searchResult.list.length > 0 && (
           <PopulateSearch
-            rows={result.list}
-            onRowClick={handleRowClick}
+            rows={searchResult.list}
             selectedRow={selectedRow}
-          ></PopulateSearch>
+            onRowClick={handleRowClick}
+          />
         )}
       </Box>
     </Drawer>
@@ -122,70 +96,64 @@ export default function SearchDrawer(props) {
 }
 
 const PopulateSearch = ({ rows, onRowClick, selectedRow }) => {
-  const style = { color: ColorCodes.text };
-
   return (
     <Paper>
       <TableContainer
         component={Paper}
-        style={{
-          backgroundColor: ColorCodes.main,
-        }}
+        sx={{ backgroundColor: ColorCodes.main }}
       >
-        <Table aria-label="simple table" stickyHeader>
+        <Table stickyHeader aria-label="search-table">
           <TableBody>
             {rows.map((row) => (
               <React.Fragment key={row.symbol}>
                 <TableRow
-                  sx={{
-                    '&:last-child td, &:last-child th': { border: 0 },
-                    textAlign: 'left',
-                    cursor: 'pointer',
-                  }}
                   onClick={() => onRowClick(row)}
+                  sx={{
+                    cursor: 'pointer',
+                    textAlign: 'center',
+                    '&:last-child td': { border: 0 },
+                  }}
                 >
-                  <TableCell
-                    component="th"
-                    scope="row"
-                    align="center"
-                    style={style}
-                  >
+                  <TableCell align="center" sx={{ color: ColorCodes.text }}>
                     <Typography sx={{ fontSize: FontSize.text }}>
                       {row.symbol}
                     </Typography>
                   </TableCell>
-                  <TableCell align="center" style={style}>
+                  <TableCell align="center" sx={{ color: ColorCodes.text }}>
                     {row.leverage}
                   </TableCell>
                 </TableRow>
 
                 {selectedRow?.symbol === row.symbol && (
-                  <Box
-                    sx={{
-                      mt: 1,
-                      p: 2,
-                      backgroundColor: ColorCodes.inputBackground,
-                      borderRadius: 2,
-                    }}
-                  >
-                    <ProfitCalculator
-                      defaultValues={{
-                        leverage: row.leverage,
-                        buyPrice: '',
-                        sellPrice: '',
-                        quantity: '',
-                        daysHeld: '',
-                        symbol: row.symbol,
-                      }}
-                    />
-                  </Box>
+                  <TableRow>
+                    <TableCell colSpan={2} sx={{ border: 'none', p: 1 }}>
+                      <Box
+                        sx={{
+                          p: 2,
+                          backgroundColor: ColorCodes.inputBackground,
+                          borderRadius: 2,
+                        }}
+                      >
+                        <ProfitCalculator
+                          defaultValues={{
+                            leverage: row.leverage,
+                            buyPrice: '',
+                            sellPrice: '',
+                            quantity: '',
+                            daysHeld: '',
+                            symbol: row.symbol,
+                          }}
+                        />
+                      </Box>
+                    </TableCell>
+                  </TableRow>
                 )}
               </React.Fragment>
             ))}
           </TableBody>
         </Table>
       </TableContainer>
-      <Divider sx={{ color: ColorCodes.border }} />
+      <Divider sx={{ borderColor: ColorCodes.border }} />
     </Paper>
   );
 };

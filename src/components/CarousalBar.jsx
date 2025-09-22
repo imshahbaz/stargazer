@@ -1,66 +1,64 @@
-import React from 'react';
-import { ColorCodes, FontSize } from '../constants/ColorCodes';
+import React, { useState } from 'react';
 import { Box, Stack, Typography } from '@mui/material';
-import { useState } from 'react';
-import TroubleshootIcon from '@mui/icons-material/Troubleshoot';
+import {
+  Troubleshoot as TroubleshootIcon,
+  UploadFile,
+} from '@mui/icons-material';
+import { ColorCodes, FontSize } from '../constants/ColorCodes';
 import Scanners from '../components/Scanners';
-import { UploadFile } from '@mui/icons-material';
 import FileUpload from '../components/FileUpload';
 
-export default function CarousalBar() {
-  const style = {
-    borderRadius: '0.5rem',
-    padding: '1rem',
-    cursor: 'default',
-    backgroundColor: ColorCodes.main,
-    border: '1px solid ' + ColorCodes.border,
-    color: ColorCodes.text,
-    fontSize: FontSize.text,
+const CarousalBar = () => {
+  const [showScanner, setShowScanner] = useState(false);
+  const [showFileUpload, setShowFileUpload] = useState(false);
+
+  const toggleDisplay = (element) => {
+    if (element === 'scanner') {
+      setShowScanner((prev) => !prev);
+      setShowFileUpload(false);
+    } else if (element === 'file') {
+      setShowFileUpload((prev) => !prev);
+      setShowScanner(false);
+    }
   };
 
-  const [show, setShow] = useState(false);
-  const [fileUploadflag, setFileUploadFlag] = useState(false);
-
-  const hide = () => setShow(false);
-
-  const display = (element) => {
-    if (element === 'search') {
-      setShow(false);
-      setFileUploadFlag(!fileUploadflag);
-    } else if (element === 'scanner') {
-      setShow(!show);
-      setFileUploadFlag(false);
-    }
+  const buttonStyle = {
+    borderRadius: 2,
+    padding: '0.8rem 1rem',
+    cursor: 'pointer',
+    display: 'flex',
+    alignItems: 'center',
+    gap: '0.5rem',
+    backgroundColor: ColorCodes.main,
+    border: `1px solid ${ColorCodes.border}`,
+    color: ColorCodes.text,
+    fontSize: FontSize.text,
+    fontWeight: 'bold',
+    whiteSpace: 'nowrap',
   };
 
   return (
     <Box sx={{ flexGrow: 1, color: ColorCodes.text }}>
       <Stack
-        spacing={3}
         direction="row"
+        spacing={3}
         className="scrollable-content"
-        style={{ paddingLeft: '1rem' }}
+        sx={{ pl: 1 }}
       >
-        <Box
-          style={{ ...style, verticalAlign: 'middle', display: 'flex' }}
-          onClick={() => display('scanner')}
-        >
-          <TroubleshootIcon style={{ marginRight: '3px' }}></TroubleshootIcon>
-          <Typography style={{ fontWeight: 'bold' }}>Scanners</Typography>
+        <Box sx={buttonStyle} onClick={() => toggleDisplay('scanner')}>
+          <TroubleshootIcon fontSize="small" />
+          <Typography>Scanners</Typography>
         </Box>
-        <Box
-          style={{ ...style, verticalAlign: 'middle', display: 'flex' }}
-          onClick={() => display('search')}
-        >
-          <UploadFile style={{ marginRight: '3px' }}></UploadFile>
-          <Typography style={{ fontWeight: 'bold', whiteSpace: 'nowrap' }}>
-            Upload File
-          </Typography>
+        <Box sx={buttonStyle} onClick={() => toggleDisplay('file')}>
+          <UploadFile fontSize="small" />
+          <Typography>Upload File</Typography>
         </Box>
       </Stack>
 
-      {show && <Scanners hide={hide}></Scanners>}
-      {fileUploadflag && <FileUpload></FileUpload>}
+      {showScanner && <Scanners hide={() => setShowScanner(false)} />}
+      {showFileUpload && <FileUpload />}
     </Box>
   );
-}
+};
+
+export default CarousalBar;
