@@ -34,4 +34,9 @@ export const chartink_strategy = [
     link: 'https://chartink.com/screener/gap-up-151057',
     display: true,
   },
+  {
+    name: 'MacScan',
+    link: 'https://chartink.com/screener/macscan-5',
+    display: true,
+  },
 ];
