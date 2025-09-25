@@ -8,7 +8,6 @@ import '../css/Scrollable.css';
 
 export default function NavBar() {
   const [drawerOpen, setDrawerOpen] = useState(false);
-
   const toggleDrawer = (open) => setDrawerOpen(open);
 
   return (
@@ -18,9 +17,11 @@ export default function NavBar() {
         color: ColorCodes.text,
         position: 'sticky',
         top: 0,
-        zIndex: 1100, // above other content
+        zIndex: 1100,
         backgroundColor: ColorCodes.main,
         borderBottom: `1px solid ${ColorCodes.border}`,
+        pb: { xs: 1, sm: 1.5 },
+        pt: { xs: 1, sm: 1.5 },
       }}
     >
       {/* Search Drawer */}
@@ -30,16 +31,16 @@ export default function NavBar() {
       <Stack
         direction="row"
         alignItems="center"
-        spacing={{ xs: 1, sm: 2 }}
-        sx={{ px: { xs: 1, sm: 2 }, py: { xs: 0.5, sm: 1 } }}
+        justifyContent="space-between" // ensures spacing between logo and search icon
+        sx={{
+          px: { xs: 1, sm: 2 },
+          overflow: 'hidden', // prevent icons from overflowing
+        }}
       >
         {/* Logo */}
         <IconButton size="large" edge="start" color="inherit" sx={{ p: 0 }}>
           <Logo />
         </IconButton>
-
-        {/* Spacer */}
-        <Box sx={{ flexGrow: 1 }} />
 
         {/* Search Button */}
         <IconButton
@@ -48,12 +49,13 @@ export default function NavBar() {
           onClick={() => toggleDrawer(true)}
           sx={{
             fontSize: { xs: FontSize.text, sm: FontSize.header },
-            pr: { xs: 1, sm: 2 },
-            pt: { xs: 1, sm: 2 },
+            p: 0, // remove extra padding
           }}
         >
           <SearchIcon
-            sx={{ fontSize: { xs: IconSize.medium, sm: IconSize.large } }}
+            sx={{
+              fontSize: { xs: IconSize.medium, sm: IconSize.large },
+            }}
           />
         </IconButton>
       </Stack>
@@ -63,7 +65,7 @@ export default function NavBar() {
         direction="row"
         spacing={{ xs: 1, sm: 3 }}
         className="scrollable-content"
-        sx={{ pl: { xs: 1, sm: 2 } }}
+        sx={{ pl: { xs: 1, sm: 2 }, overflowX: 'auto' }}
       />
     </Box>
   );
