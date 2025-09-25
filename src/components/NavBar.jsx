@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import { Box, Stack, IconButton } from '@mui/material';
 import { ColorCodes, FontSize, IconSize } from '../constants/ColorCodes';
 import Logo from '../components/Logo';
@@ -6,10 +5,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import SearchDrawer from './SearchDrawer';
 import '../css/Scrollable.css';
 
-export default function NavBar() {
-  const [drawerOpen, setDrawerOpen] = useState(false);
-  const toggleDrawer = (open) => setDrawerOpen(open);
-
+export default function NavBar({ drawer }) {
   return (
     <Box
       sx={{
@@ -25,7 +21,7 @@ export default function NavBar() {
       }}
     >
       {/* Search Drawer */}
-      <SearchDrawer open={drawerOpen} handleShow={toggleDrawer} />
+      <SearchDrawer open={drawer.open} handleShow={drawer.toggle} />
 
       {/* Top Nav */}
       <Stack
@@ -46,10 +42,11 @@ export default function NavBar() {
         <IconButton
           aria-label="search"
           color="inherit"
-          onClick={() => toggleDrawer(true)}
+          onClick={() => drawer.toggle(true)}
           sx={{
             fontSize: { xs: FontSize.text, sm: FontSize.header },
-            p: 0, // remove extra padding
+            p: 0,
+            display: { xs: 'none', sm: 'flex' },
           }}
         >
           <SearchIcon
@@ -59,14 +56,6 @@ export default function NavBar() {
           />
         </IconButton>
       </Stack>
-
-      {/* Optional Scrollable Section */}
-      <Stack
-        direction="row"
-        spacing={{ xs: 1, sm: 3 }}
-        className="scrollable-content"
-        sx={{ pl: { xs: 1, sm: 2 }, overflowX: 'auto' }}
-      />
     </Box>
   );
 }
