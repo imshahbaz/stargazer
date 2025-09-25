@@ -1,6 +1,6 @@
 import React from 'react';
 import { ColorCodes, FontSize } from '../constants/ColorCodes';
-import jaguarlogo from '../images/starlogo.png';
+import jaguarlogo from '../images/st.jpg';
 import { Box, Typography } from '@mui/material';
 
 export default function Logo() {
@@ -34,7 +34,7 @@ export default function Logo() {
           cursor: 'default',
         }}
       >
-        Star Gazer
+        Shahbaz Trades
       </Typography>
     </Box>
   );

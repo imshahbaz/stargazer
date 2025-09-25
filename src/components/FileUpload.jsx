@@ -15,7 +15,6 @@ import AlertInfo from '../components/AlertInfo';
 import upload from '../images/upload.png';
 import { handleData } from '../utils/FileUtils';
 import { ColorCodes } from '../constants/ColorCodes';
-import '../css/HomePage.css';
 import StockDetailsTable from './StockDetailsTable';
 
 export default function FileUpload() {
@@ -64,20 +63,35 @@ export default function FileUpload() {
   };
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <Grid container spacing={2} justifyContent="center" alignItems="center">
-        <Grid item xs={10}>
-          <UploadForm
-            fileName={fileName}
-            onSubmit={handleSubmit}
-            onFileChange={handleFileChange}
-            broker={broker}
-            setBroker={setBroker} // <-- fixed
-          />
-        </Grid>
-        <Grid item xs={12}>
-          <StockDetailsTable show={showTable} rows={rows} fileName={fileName} />
-        </Grid>
+    <Box sx={{ width: '100%', flexGrow: 1 }}>
+      <Grid
+        container
+        direction="column" // ✅ ensure items stack vertically
+        spacing={2}
+        alignItems="center"
+      >
+        {!showTable && (
+          <Grid item xs={12}>
+            <UploadForm
+              fileName={fileName}
+              onSubmit={handleSubmit}
+              onFileChange={handleFileChange}
+              broker={broker}
+              setBroker={setBroker}
+            />
+          </Grid>
+        )}
+
+        {showTable && (
+          <Grid item xs={12} sx={{ width: '100%' }}>
+            <StockDetailsTable
+              rows={rows}
+              fileName={fileName}
+              show={showTable}
+            />
+          </Grid>
+        )}
+
         <Grid item xs={12}>
           <AlertInfo
             open={showAlert}
@@ -94,36 +108,56 @@ function UploadForm({ fileName, onSubmit, onFileChange, broker, setBroker }) {
   return (
     <Paper
       sx={{
-        p: 2,
+        p: 3,
         borderRadius: '2rem',
         backgroundColor: ColorCodes.main,
+        width: '100%',
+        maxWidth: { xs: '100%', sm: 500, md: 700 },
+        mx: 'auto',
+        boxSizing: 'border-box',
         mt: 2,
       }}
     >
-      <Typography sx={{ color: ColorCodes.text, fontWeight: 'bold', mb: 2 }}>
+      <Typography
+        sx={{
+          color: ColorCodes.text,
+          fontWeight: 'bold',
+          mb: 2,
+          textAlign: 'center',
+        }}
+      >
         Upload Excel File
       </Typography>
 
       <form onSubmit={onSubmit}>
+        {/* Upload Image */}
         <Box
-          className="upload-input"
           onClick={() => document.getElementById('excel-file-input').click()}
+          sx={{
+            cursor: 'pointer',
+            textAlign: 'center',
+            width: { xs: '60%', sm: '150px', md: '200px' },
+            mx: 'auto',
+            mb: 2,
+          }}
         >
           <img
             src={upload}
             alt="Upload Excel File"
-            className="upload-input-image"
+            style={{ width: '100%', height: 'auto', display: 'block' }}
           />
         </Box>
 
+        {/* Selected File Name */}
         {fileName && (
           <Box sx={{ mt: 1, mb: 2 }}>
-            <Typography sx={{ color: ColorCodes.text }}>
+            <Typography sx={{ color: ColorCodes.text, textAlign: 'center' }}>
               Selected File: {fileName}
             </Typography>
           </Box>
         )}
 
+        {/* Hidden File Input */}
         <Input
           type="file"
           required
@@ -133,6 +167,7 @@ function UploadForm({ fileName, onSubmit, onFileChange, broker, setBroker }) {
           sx={{ display: 'none' }}
         />
 
+        {/* Broker Select */}
         <TextField
           select
           fullWidth
@@ -159,20 +194,24 @@ function UploadForm({ fileName, onSubmit, onFileChange, broker, setBroker }) {
           <MenuItem value="ZERODHA">ZERODHA</MenuItem>
         </TextField>
 
+        {/* Upload Button */}
         {fileName && (
           <Button
             type="submit"
             variant="outlined"
             startIcon={<CloudUploadIcon />}
             sx={{
-              width: '70%',
+              width: '100%',
+              maxWidth: 400,
               borderRadius: '1rem',
               color: ColorCodes.text,
-              border: '2px solid ' + ColorCodes.border,
+              border: `2px solid ${ColorCodes.border}`,
               fontWeight: 'bold',
               display: 'block',
               mx: 'auto',
               mt: 2,
+              py: 1.5,
+              fontSize: { xs: '0.9rem', sm: '1rem', md: '1.1rem' },
             }}
           >
             Upload

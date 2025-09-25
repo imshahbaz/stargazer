@@ -1,63 +1,3 @@
-// import * as React from 'react';
-// import Table from '@mui/material/Table';
-// import TableBody from '@mui/material/TableBody';
-// import TableCell from '@mui/material/TableCell';
-// import TableContainer from '@mui/material/TableContainer';
-// import TableRow from '@mui/material/TableRow';
-// import { ColorCodes } from '../constants/ColorCodes.jsx';
-// import { Grid, Divider, Paper } from '@mui/material';
-
-// export default function StockDetailsTable(props) {
-//   const style = { color: ColorCodes.text, backgroundColor: ColorCodes.main };
-
-//   return (
-//     <>
-//       {props.show && (
-//         <Paper>
-//           <Grid item xs={12}>
-//             <Divider color={ColorCodes.border} />
-//           </Grid>
-//           <TableContainer
-//             component={Paper}
-//             style={{
-//               backgroundColor: ColorCodes.main,
-//             }}
-//           >
-//             <Table aria-label="simple table" stickyHeader>
-//               <TableBody>
-//                 {props.rows.map((row) => (
-//                   <TableRow
-//                     key={row.name}
-//                     sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-//                   >
-//                     <TableCell
-//                       component="th"
-//                       scope="row"
-//                       align="center"
-//                       style={style}
-//                     >
-//                       {row.name}
-//                     </TableCell>
-//                     <TableCell align="center" style={style}>
-//                       {row.margin}
-//                     </TableCell>
-//                     <TableCell align="center" style={style}>
-//                       {row.price}
-//                     </TableCell>
-//                   </TableRow>
-//                 ))}
-//               </TableBody>
-//             </Table>
-//           </TableContainer>
-//           <Grid item xs={12}>
-//             <Divider color={ColorCodes.border} />
-//           </Grid>
-//         </Paper>
-//       )}
-//     </>
-//   );
-// }
-
 import React from 'react';
 import {
   Table,
@@ -67,7 +7,7 @@ import {
   TableRow,
   Paper,
   Divider,
-  Grid,
+  Box,
 } from '@mui/material';
 import { ColorCodes } from '../constants/ColorCodes.jsx';
 
@@ -75,20 +15,31 @@ export default function StockDetailsTable({ show, rows }) {
   if (!show || !rows || rows.length === 0) return null;
 
   return (
-    <Paper>
-      <Grid item xs={12}>
-        <Divider sx={{ borderColor: ColorCodes.border }} />
-      </Grid>
+    <Box sx={{ width: '100%', mt: 2, px: { xs: 1, sm: 2, md: 4 } }}>
+      {/* Top Divider */}
+      <Divider sx={{ borderColor: ColorCodes.border, mb: 1 }} />
 
+      {/* Table */}
       <TableContainer
         component={Paper}
-        sx={{ backgroundColor: ColorCodes.main }}
+        sx={{
+          width: '100%',
+          backgroundColor: ColorCodes.main,
+          overflowX: 'auto', // horizontal scroll on mobile
+        }}
       >
-        <Table stickyHeader aria-label="stock details table">
+        <Table
+          stickyHeader
+          aria-label="stock details table"
+          sx={{
+            minWidth: 300, // ensures columns have minimum width
+            tableLayout: 'auto', // allow proportional scaling
+          }}
+        >
           <TableBody>
-            {rows.map((row) => (
+            {rows.map((row, index) => (
               <TableRow
-                key={row.name}
+                key={index}
                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
               >
                 <TableCell
@@ -98,6 +49,7 @@ export default function StockDetailsTable({ show, rows }) {
                   sx={{
                     color: ColorCodes.text,
                     backgroundColor: ColorCodes.main,
+                    minWidth: 100, // minimum width for this column
                   }}
                 >
                   {row.name}
@@ -107,6 +59,7 @@ export default function StockDetailsTable({ show, rows }) {
                   sx={{
                     color: ColorCodes.text,
                     backgroundColor: ColorCodes.main,
+                    minWidth: 80,
                   }}
                 >
                   {row.margin}
@@ -116,6 +69,7 @@ export default function StockDetailsTable({ show, rows }) {
                   sx={{
                     color: ColorCodes.text,
                     backgroundColor: ColorCodes.main,
+                    minWidth: 80,
                   }}
                 >
                   {row.price}
@@ -126,9 +80,8 @@ export default function StockDetailsTable({ show, rows }) {
         </Table>
       </TableContainer>
 
-      <Grid item xs={12}>
-        <Divider sx={{ borderColor: ColorCodes.border }} />
-      </Grid>
-    </Paper>
+      {/* Bottom Divider */}
+      <Divider sx={{ borderColor: ColorCodes.border, mt: 1 }} />
+    </Box>
   );
 }

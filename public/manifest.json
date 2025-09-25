@@ -1,20 +1,20 @@
 {
-  "short_name": "Star Gazer",
-  "name": "Star Gazer",
+  "short_name": "Shahbaz Trades",
+  "name": "Shahbaz Trades",
   "icons": [
     {
-      "src": "logoround.png",
+      "src": "st.jpg",
       "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/png"
+      "type": "image/jpeg"
     },
     {
-      "src": "logoround.png",
-      "type": "image/png",
+      "src": "st.jpg",
+      "type": "image/jpeg",
       "sizes": "192x192"
     },
     {
-      "src": "logoround.png",
-      "type": "image/png",
+      "src": "st.jpg",
+      "type": "image/jpeg",
       "sizes": "512x512"
     }
   ],
