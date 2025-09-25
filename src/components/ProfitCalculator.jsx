@@ -76,9 +76,9 @@ const ProfitCalculator = ({ defaultValues = {} }) => {
   const [leverage, setLeverage] = useState(defaultValues.leverage || 1);
   const [daysHeld, setDaysHeld] = useState(defaultValues.daysHeld || '');
   const [quantityType, setQuantityType] = useState(
-    defaultValues.quantityType || ''
+    defaultValues.quantityType || 'investment'
   );
-  const [sellType, setSellType] = useState(defaultValues.sellType || '');
+  const [sellType, setSellType] = useState(defaultValues.sellType || 'percent');
   const [result, setResult] = useState(null);
   const [alertOpen, setAlertOpen] = useState(false);
   const [alertMessage, setAlertMessage] = useState('');
@@ -127,14 +127,14 @@ const ProfitCalculator = ({ defaultValues = {} }) => {
     const profitPercent = (netProfit / margin) * 100;
 
     setResult({
-      totalInvestment: Math.round(totalInvestment),
-      margin: Math.round(margin),
-      fundingAmount: Math.round(fundingAmount),
-      interest: Math.round((fundingAmount * 0.15 * days) / 365),
-      profit: Math.round(profit),
-      totalCharges: Math.round(totalCharges),
-      netProfit: Math.round(netProfit),
-      profitPercent: Math.round(profitPercent),
+      totalInvestment: Number(totalInvestment.toFixed(2)),
+      margin: Number(margin.toFixed(2)),
+      fundingAmount: Number(fundingAmount.toFixed(2)),
+      interest: Number(((fundingAmount * 0.15 * days) / 365).toFixed(2)),
+      profit: Number(profit.toFixed(2)),
+      totalCharges: Number(totalCharges.toFixed(2)),
+      netProfit: Number(netProfit.toFixed(2)),
+      profitPercent: Number(profitPercent.toFixed(2)),
     });
   };
 
