@@ -4,33 +4,35 @@ import jaguarlogo from '../images/st.jpg';
 import { Box, Typography } from '@mui/material';
 
 export default function Logo() {
-  const style = {
-    height: '3rem',
-    width: '3rem',
-    borderRadius: '50%',
-    border: '2px solid' + ColorCodes.border,
-    padding: '2px',
-  };
-
   return (
     <Box
-      style={{
-        paddingLeft: '1rem',
-        marginBottom: '1rem',
-        paddingTop: '1rem',
-        verticalAlign: 'middle',
+      sx={{
         display: 'flex',
-        justifyContent: 'left',
         alignItems: 'center',
+        justifyContent: 'flex-start',
+        gap: { xs: 1, sm: 1.5 }, // smaller gap on mobile
+        py: { xs: 1, sm: 1 },
+        pl: { xs: 1, sm: 1 },
+        mb: { xs: 1, sm: 1 },
       }}
     >
-      <img src={jaguarlogo} alt="Jaguar Trading" style={style}></img>
+      <Box
+        component="img"
+        src={jaguarlogo}
+        alt="Jaguar Trading"
+        sx={{
+          height: { xs: '3rem', sm: '4rem' }, // mobile 3rem, desktop 4rem
+          width: { xs: '3rem', sm: '4rem' },
+          borderRadius: '50%',
+          border: `2px solid ${ColorCodes.border}`,
+          p: '2px',
+        }}
+      />
       <Typography
-        style={{
+        sx={{
           color: ColorCodes.text,
-          marginLeft: '12px',
           fontFamily: 'Times New Roman',
-          fontSize: FontSize.header,
+          fontSize: { xs: '2rem', sm: FontSize.header }, // smaller on mobile
           cursor: 'default',
         }}
       >

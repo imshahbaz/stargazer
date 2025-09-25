@@ -12,7 +12,17 @@ export default function NavBar() {
   const toggleDrawer = (open) => setDrawerOpen(open);
 
   return (
-    <Box sx={{ flexGrow: 1, color: ColorCodes.text }}>
+    <Box
+      sx={{
+        flexGrow: 1,
+        color: ColorCodes.text,
+        position: 'sticky',
+        top: 0,
+        zIndex: 1100, // above other content
+        backgroundColor: ColorCodes.main,
+        borderBottom: `1px solid ${ColorCodes.border}`,
+      }}
+    >
       {/* Search Drawer */}
       <SearchDrawer open={drawerOpen} handleShow={toggleDrawer} />
 
@@ -20,11 +30,11 @@ export default function NavBar() {
       <Stack
         direction="row"
         alignItems="center"
-        spacing={2}
-        sx={{ px: 2, py: 1 }}
+        spacing={{ xs: 1, sm: 2 }}
+        sx={{ px: { xs: 1, sm: 2 }, py: { xs: 0.5, sm: 1 } }}
       >
         {/* Logo */}
-        <IconButton size="large" edge="start" color="inherit">
+        <IconButton size="large" edge="start" color="inherit" sx={{ p: 0 }}>
           <Logo />
         </IconButton>
 
@@ -37,21 +47,23 @@ export default function NavBar() {
           color="inherit"
           onClick={() => toggleDrawer(true)}
           sx={{
-            fontSize: FontSize.header,
-            pr: 2,
-            pt: 2,
+            fontSize: { xs: FontSize.text, sm: FontSize.header },
+            pr: { xs: 1, sm: 2 },
+            pt: { xs: 1, sm: 2 },
           }}
         >
-          <SearchIcon style={{ fontSize: IconSize.large }} />
+          <SearchIcon
+            sx={{ fontSize: { xs: IconSize.medium, sm: IconSize.large } }}
+          />
         </IconButton>
       </Stack>
 
-      {/* Scrollable Section (Optional content) */}
+      {/* Optional Scrollable Section */}
       <Stack
         direction="row"
-        spacing={3}
+        spacing={{ xs: 1, sm: 3 }}
         className="scrollable-content"
-        sx={{ pl: 2 }}
+        sx={{ pl: { xs: 1, sm: 2 } }}
       />
     </Box>
   );
