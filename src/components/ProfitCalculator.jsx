@@ -104,13 +104,14 @@ const ProfitCalculator = ({ defaultValues = {} }) => {
       return;
     }
 
-    sp = sellType === 'exact' ? sp : bp + (bp * sp) / 100;
-    const totalInvestment =
-      quantityType === 'quantity' ? bp * qty : qty * leverage;
-    const margin = quantityType === 'quantity' ? totalInvestment / lev : qty;
-    const fundingAmount = totalInvestment - margin;
+    sp = sellType === 'exact' ? sp : bp * (1 + sp / 100);
     const shares =
-      quantityType === 'quantity' ? qty : Math.trunc(totalInvestment / bp);
+      quantityType === 'quantity' ? qty : Math.trunc((qty * lev) / bp);
+
+    const totalInvestment = shares * bp;
+
+    const margin = totalInvestment / lev;
+    const fundingAmount = totalInvestment - margin;
 
     const profit = (sp - bp) * shares;
     const turnover = (bp + sp) * shares;
@@ -243,13 +244,11 @@ const ProfitCalculator = ({ defaultValues = {} }) => {
             spacing={1}
             sx={{ color: ColorCodes.new, alignItems: 'center' }}
           >
-            <Typography>
-              Total Investment (Leveraged): ₹{result.totalInvestment}
-            </Typography>
-            <Typography>Margin (Your Investment): ₹{result.margin}</Typography>
+            <Typography>Total Investment: ₹{result.totalInvestment}</Typography>
+            <Typography>Your Investment: ₹{result.margin}</Typography>
             <Typography>Funding Amount: ₹{result.fundingAmount}</Typography>
             <Typography>Interest (15% p.a.): ₹{result.interest}</Typography>
-            <Typography>Profit/Loss (Leveraged): ₹{result.profit}</Typography>
+            <Typography>Profit/Loss: ₹{result.profit}</Typography>
             <Typography>
               <strong>Total Charges: ₹{result.totalCharges}</strong>
             </Typography>
@@ -267,7 +266,7 @@ const ProfitCalculator = ({ defaultValues = {} }) => {
                 backgroundColor: ColorCodes.main,
               }}
             >
-              Profit % on Your Investment: {result.profitPercent}%
+              Profit on Your Investment: {result.profitPercent}%
             </Typography>
           </Stack>
         </Box>
