@@ -39,4 +39,9 @@ export const chartink_strategy = [
     link: 'https://chartink.com/screener/macscan-5',
     display: true,
   },
+  {
+    name: 'Super Pivot',
+    link: 'https://chartink.com/screener/super-pivot-1385',
+    display: true,
+  },
 ];
