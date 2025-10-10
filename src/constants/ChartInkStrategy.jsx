@@ -27,7 +27,7 @@ export const chartink_strategy = [
   {
     name: 'Close Surge',
     link: 'https://chartink.com/screener/open-surge-0-6',
-    display: true,
+    display: false,
   },
   {
     name: 'Gap Up',
@@ -42,6 +42,11 @@ export const chartink_strategy = [
   {
     name: 'Super Pivot',
     link: 'https://chartink.com/screener/super-pivot-1385',
+    display: true,
+  },
+  {
+    name: 'Swing Low',
+    link: 'https://chartink.com/screener/swing-low-4633',
     display: true,
   },
 ];
