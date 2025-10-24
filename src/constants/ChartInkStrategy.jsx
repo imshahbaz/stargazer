@@ -12,7 +12,7 @@ export const chartink_strategy = [
   {
     name: 'Dual Rsi',
     link: 'https://chartink.com/screener/dual-rsi-85',
-    display: false,
+    display: true,
   },
   {
     name: 'Super Rsi',
@@ -47,6 +47,6 @@ export const chartink_strategy = [
   {
     name: 'Swing Low',
     link: 'https://chartink.com/screener/swing-low-4633',
-    display: true,
+    display: false,
   },
 ];
